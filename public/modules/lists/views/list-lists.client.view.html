@@ -3,15 +3,80 @@
         <h1>Lists</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="list in lists" data-ng-href="#!/lists/{{list._id}}" class="list-group-item">
-			<small class="list-group-item-text">
+        <ul data-ng-repeat="list in lists" data-ng-href="#!/lists/{{list._id}}" class="list-group-item">
+
+
+
+            <!-- LIST DETAILS -->
+            <small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="list.created | date:'medium'"></span>
 				by
 				<span data-ng-bind="list.user.displayName"></span>
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="list.name"></h4>
-        </a>
+
+            <!-- TASK DETAILS -->
+            <ul>
+                <li ng-repeat="task in list.tasks">{{ task.name }}</li>
+
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Start Date</th>
+                        <th>Due Date</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- Add New Task to this Todo list-->
+                        <form name="newTaskForm" id="newTaskForm" ng-submit="createTask($index)" novalidate>
+                            <fieldset>
+                                <div class="form-group">
+                                    <tr>
+                                    <!--Checkbox (empty)-->
+
+                                    <!--Name-->
+                                    <td>
+                                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
+                                    </td>
+                                    <td>
+                                        <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
+                                    </td>
+                                    <td>
+                                        <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
+                                    </td>
+
+                                    <td></td>
+                                    </tr>
+
+                                    <td><input type="submit" class="btn btn-default" ng-click="createTask($index)"></td>
+
+                                </div>
+
+                                <div data-ng-show="error" class="text-danger">
+                                    <strong data-ng-bind="error"></strong>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </tbody>
+                    </table>
+
+            </ul>
+
+
+
+        </ul>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!lists.$resolved || lists.length">
     	No Lists yet, why don't you <a href="/#!/lists/create">create one</a>?

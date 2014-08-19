@@ -5,12 +5,41 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists ) {
 		$scope.authentication = Authentication;
 
+        // MY FUNCTIONS
+
+        $scope.createTask = function(index) {
+
+            $scope.lists[index].tasks.push({
+                name: this.name,
+                description: this.description,
+                startDate: this.startDate,
+                dueDate: this.dueDate,
+                status: false
+            });
+
+            var list = $scope.lists[index] ;
+
+            list.$update(function() {
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
+
+            // Update the view
+            $scope.find();
+        };
+
+        // CRUD
+
 		// Create new List
 		$scope.create = function() {
 			// Create new List object
 			var list = new Lists ({
-				name: this.name
-			});
+				name: this.name,
+                tasks: []
+
+            });
+
+            console.log(list);
 
 			// Redirect after save
 			list.$save(function(response) {
