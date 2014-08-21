@@ -1,16 +1,22 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists',
-	function($scope, $stateParams, $location, Authentication, Lists ) {
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList',
+	function($scope, $stateParams, $location, Authentication, Lists, SelectedList ) {
 		$scope.authentication = Authentication;
 
         // MY FUNCTIONS
 
         // Returns all of the tasks for a specific List
         $scope.findTasks = function(index) {
-        	$scope.selectedList = index;
+        	// $scope.selectedList = index;
+        	console.log(index);
+        	SelectedList.setSelectedList( index );
         	$scope.lists[index].tasks;
+        };
+
+        $scope.getSelectedList = function () {
+        	return SelectedList.getSelectedList();
         };
 
         // Creates a new task for a specific list
@@ -36,6 +42,22 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
             // Update the view
             $scope.findTasks(index);
         };
+
+        // Toggle Status
+		$scope.toggleStatus = function ( task ) {
+			if ( task ) {
+				console.log(task);
+				if ( task.status ) {
+					$scope.task.status = false;
+					$scope.update();
+				}
+				else {
+					$scope.task.status = true;
+					$scope.update();
+					console.log(task);
+				}
+			}
+		};
 
         // CRUD
 
