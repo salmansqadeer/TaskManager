@@ -44,18 +44,37 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         };
 
         // Toggle Status
+        // TODO this is a terrible method - probably should put this into a Service I guess?
+        // TODO - should all Task related functions be put into their own service?
 		$scope.toggleStatus = function ( task ) {
 			if ( task ) {
-				console.log(task);
-				if ( task.status ) {
-					$scope.task.status = false;
-					$scope.update();
+				
+				// Go through all Tasks and find the right task to change
+
+				var activeTask = $scope.lists[$scope.getSelectedList()].tasks;
+
+				for (var t in activeTask) {
+
+					if (activeTask[t]._id === task._id) {
+						if ( activeTask[t].status ) {
+							activeTask[t].status = false;
+							$scope.update();
+						}
+						else {
+							activeTask[t].status = true;
+						}
+
+					}
 				}
-				else {
-					$scope.task.status = true;
-					$scope.update();
-					console.log(task);
-				}
+
+				console.log($scope.lists[$scope.getSelectedList()])
+				$scope.lists[$scope.getSelectedList()].$update(function() {
+		            }, function(errorResponse) {
+		                $scope.error = errorResponse.data.message;
+		            });
+
+
+
 			}
 		};
 
@@ -100,11 +119,12 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		};
 
 		// Update existing List
+		// TODO note that this update function can only be called by lists.
 		$scope.update = function() {
 			var list = $scope.list ;
 
 			list.$update(function() {
-				$location.path('lists/' + list._id);
+				// $location.path('lists/' + list._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
