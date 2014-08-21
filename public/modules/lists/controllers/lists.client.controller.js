@@ -7,8 +7,17 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
         // MY FUNCTIONS
 
+        // Returns all of the tasks for a specific List
+        $scope.findTasks = function(index) {
+        	$scope.selectedList = index;
+        	$scope.lists[index].tasks;
+        };
+
+        // Creates a new task for a specific list
         $scope.createTask = function(index) {
 
+        	console.log(index);
+        	console.log($scope.lists);
             $scope.lists[index].tasks.push({
                 name: this.name,
                 description: this.description,
@@ -25,7 +34,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
             });
 
             // Update the view
-            $scope.find();
+            $scope.findTasks(index);
         };
 
         // CRUD
