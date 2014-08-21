@@ -10,7 +10,6 @@
 			<!-- LIST DETAILS -->
 	    	<div class="col-md-3">
 	    		<h3>Lists</h3>
-
 		    		<ul data-ng-repeat = "list in lists">
 		    			<li>
 		    				<a ng-click="findTasks($index)"> {{list.name}} </a>
@@ -18,7 +17,7 @@
 		    		</ul>	
 	    	</div>
 
-	    	<!-- LIST Heading -->
+	    	<!-- LIST HEADING -->
 			<h2 class="list-group-item-heading" data-ng-bind="lists[selectedList].name"></h2>
             <small class="list-group-item-text">
 				Posted on
@@ -30,7 +29,6 @@
 			<!-- TASK DETAILS -->
 	    	<div class="col-md-9">
 	    		
-
 	                <!-- Table -->
 	                <table class="table">
 	                    <thead>
