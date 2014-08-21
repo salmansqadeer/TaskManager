@@ -1,0 +1,8 @@
+tr:hover {
+	background-color: #eee;
+}
+
+.completedTask {
+	background-color: #F2F2F2;
+	color: #999;
+}

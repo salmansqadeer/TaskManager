@@ -67,11 +67,10 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 					}
 				}
 
-				console.log($scope.lists[$scope.getSelectedList()])
 				$scope.lists[$scope.getSelectedList()].$update(function() {
-		            }, function(errorResponse) {
-		                $scope.error = errorResponse.data.message;
-		            });
+	            }, function(errorResponse) {
+	                $scope.error = errorResponse.data.message;
+	            });
 
 
 

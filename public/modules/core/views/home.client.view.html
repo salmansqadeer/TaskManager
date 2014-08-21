@@ -43,9 +43,9 @@
 		                    </tr>
 	                    </thead>
 						<tbody>
-		                    <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks">
+		                    <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
 		                        <th>
-		                        	<td><input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" ></td>
+		                        	<td><input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)"></td>
 		                        </th>
 		                        <th>{{task.name}}</th>
 		                        <th>{{task.description}}</th>
