@@ -9,10 +9,8 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
         // Returns all of the tasks for a specific List
         $scope.findTasks = function(index) {
-        	// $scope.selectedList = index;
-        	console.log(index);
         	SelectedList.setSelectedList( index );
-        	$scope.lists[index].tasks;
+        	return $scope.lists[index].tasks;
         };
 
         $scope.getSelectedList = function () {
@@ -41,6 +39,12 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
             // Update the view
             $scope.findTasks(index);
+        };
+
+        // Remove a task from a specific list
+        $scope.removeTask = function (taskIndex) {
+        	$scope.lists[$scope.getSelectedList()].tasks.splice(taskIndex, 1);
+        	$scope.findTasks($scope.getSelectedList());
         };
 
         // Toggle Status
@@ -83,22 +87,25 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		$scope.create = function() {
 			// Create new List object
 			var list = new Lists ({
-				name: this.name,
+				name: this.listName,
                 tasks: []
 
             });
 
             console.log(list);
 
-			// Redirect after save
 			list.$save(function(response) {
-				$location.path('lists/' + response._id);
+				// Redirect after save
+				// $location.path('lists/' + response._id);
 
 				// Clear form fields
 				$scope.name = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+
+			// Update the view
+			$scope.find();
 		};
 
 		// Remove existing List

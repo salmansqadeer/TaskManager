@@ -1,0 +1,15 @@
+.lists ul {
+	list-style-type: none;
+}
+
+.lists li .delete {
+	display: none;	
+}
+
+.lists li:hover .delete {
+	display: inline;	
+}
+
+.lists .form-control {
+	margin-bottom: 10px;
+}

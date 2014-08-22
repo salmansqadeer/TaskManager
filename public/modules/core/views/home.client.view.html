@@ -9,50 +9,81 @@
 
 			<!-- LIST DETAILS -->
 	    	<div class="col-md-3">
-	    		<h3>Lists</h3>
-		    		<ul data-ng-repeat = "list in lists">
-		    			<li>
-		    				<a ng-click="findTasks($index)"> {{list.name}} </a>
-		    			</li>
-		    		</ul>	
-	    	</div>
+	    		<div class="lists">
 
-	    	<!-- LIST HEADING -->
-			<h2 class="list-group-item-heading" data-ng-bind="lists[ getSelectedList() ].name"></h2>
-            <small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="lists[ getSelectedList() ].created | date:'medium'"></span>
-				by
-				<span data-ng-bind="lists[ getSelectedList() ].user.displayName"></span>
-			</small>
+		    		<h2>Lists</h2>
+
+ 					<ul data-ng-repeat = "list in lists">
+
+ 						<li>
+ 							<a ng-click="findTasks($index)"> {{list.name}} </a>
+ 							<div class="pull-right" data-ng-show="authentication.user._id == list.user._id">
+			                        <a class="delete" ng-click="remove(list)">
+			                            <i class="glyphicon glyphicon-trash"></i>
+			                        </a>
+		                    </div>
+ 						</li>
+
+ 					</ul>
+
+			    	<!-- ADD NEW LIST -->
+					<form name="newListForm" id="newListForm" novalidate>
+	                    <fieldset>
+	                        <td>
+		                        <input type="text" data-ng-model="listName" id="listName" class="form-control" placeholder="Name" required>
+		                    </td>
+
+							<td>
+								<input type="submit" class="btn btn-default" ng-click="create()">
+							</td>
+	                	</fieldset>
+	                </form>
+
+	    		</div>
+	    	</div>
 
 			<!-- TASK DETAILS -->
 	    	<div class="col-md-9">
+
+		    	<!-- LIST HEADING -->
+				<h2 class="list-group-item-heading" data-ng-bind="lists[ getSelectedList() ].name"></h2>
+	            <small class="list-group-item-text">
+					Posted on
+					<span data-ng-bind="lists[ getSelectedList() ].created | date:'medium'"></span>
+					by
+					<span data-ng-bind="lists[ getSelectedList() ].user.displayName"></span>
+				</small>
+
 	    		
 	                <!-- Table -->
 	                <table class="table">
 	                    <thead>
 		                    <tr>
-		                        <th>#</th>
+		                        <th>Status</th>
 		                        <th>Name</th>
 		                        <th>Description</th>
 		                        <th>Start Date</th>
 		                        <th>Due Date</th>
 		                        <th></th>
-		                        <th></th>
 		                    </tr>
 	                    </thead>
 						<tbody>
 		                    <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
-		                        <th>
-		                        	<td><input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)"></td>
-		                        </th>
-		                        <th>{{task.name}}</th>
-		                        <th>{{task.description}}</th>
-		                        <th>{{task.startDate}}</th>
-		                        <th>{{task.dueDate}}</th>
-		                        <th></th>
-		                        <th></th>
+		                        <td>
+		                        	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)">
+		                        </td>
+		                        <td>{{task.name}}</td>
+		                        <td>{{task.description}}</td>
+		                        <td>{{task.startDate}}</td>
+		                        <td>{{task.dueDate}}</td>
+		                        
+		                        <td>
+				                    <div class="pull-right">
+				                        <a ng-click="removeTask($index)">
+				                            <i class="glyphicon glyphicon-trash"></i>
+				                        </a>
+				                    </div>
+		                        </td>
 		                    </tr>
 							
 							<tr>
@@ -63,7 +94,7 @@
 		                                    <tr>
 		                                    <!--Checkbox (empty)-->
 		                                    <td></td>
-		                                    <!--Name-->
+
 		                                    <td>
 		                                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
 		                                    </td>
