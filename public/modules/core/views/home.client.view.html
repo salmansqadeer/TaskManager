@@ -16,7 +16,10 @@
  					<ul data-ng-repeat = "list in lists">
 
  						<li>
+ 							<!-- Each List Item -->
  							<a ng-click="findTasks($index)"> {{list.name}} </a>
+
+ 							<!-- Delete a List -->
  							<div class="pull-right" data-ng-show="authentication.user._id == list.user._id">
 			                        <a class="delete" ng-click="remove(list)">
 			                            <i class="glyphicon glyphicon-trash"></i>
@@ -44,6 +47,8 @@
 
 			<!-- TASK DETAILS -->
 	    	<div class="col-md-9">
+	    	<div class="tasks">
+
 
 		    	<!-- LIST HEADING -->
 				<h2 class="list-group-item-heading" data-ng-bind="lists[ getSelectedList() ].name"></h2>
@@ -59,7 +64,7 @@
 	                <table class="table">
 	                    <thead>
 		                    <tr>
-		                        <th>Status</th>
+		                        <th></th>
 		                        <th>Name</th>
 		                        <th>Description</th>
 		                        <th>Start Date</th>
@@ -68,24 +73,7 @@
 		                    </tr>
 	                    </thead>
 						<tbody>
-		                    <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
-		                        <td>
-		                        	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)">
-		                        </td>
-		                        <td>{{task.name}}</td>
-		                        <td>{{task.description}}</td>
-		                        <td>{{task.startDate}}</td>
-		                        <td>{{task.dueDate}}</td>
-		                        
-		                        <td>
-				                    <div class="pull-right">
-				                        <a ng-click="removeTask($index)">
-				                            <i class="glyphicon glyphicon-trash"></i>
-				                        </a>
-				                    </div>
-		                        </td>
-		                    </tr>
-							
+
 							<tr>
 		                    	<!-- Add New Task to this Todo list-->
 		                        <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>
@@ -120,12 +108,34 @@
 		                            </fieldset>
 		                        </form>
 		                    </tr>
-		                    
+
+
+		                    <!-- LIST ALL TASKS -->
+
+		                    <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
+		                        <td>
+		                        	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)">
+		                        </td>
+		                        <td>{{task.name}}</td>
+		                        <td>{{task.description}}</td>
+		                        <td>{{task.startDate}}</td>
+		                        <td>{{task.dueDate}}</td>
+		                        
+		                        <td>
+		                        	<!-- Delete a task -->
+				                    <div class="pull-right delete">
+				                        <a ng-click="removeTask($index)">
+				                            <i class="glyphicon glyphicon-trash"></i>
+				                        </a>
+				                    </div>
+		                        </td>
+		                    </tr>
+							
 	                    </tbody>
 	                        
 
                     </table>
-
+			</div>
 	    	</div>
 
 	    </div>

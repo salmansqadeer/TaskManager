@@ -6,3 +6,11 @@ tr:hover {
 	background-color: #F2F2F2;
 	color: #999;
 }
+
+/*.tasks tr .delete {
+	display: none;	
+}
+
+.tasks tr:hover .delete {
+	display: inline;	
+}*/

@@ -22,7 +22,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
         	console.log(index);
         	console.log($scope.lists);
-            $scope.lists[index].tasks.push({
+            $scope.lists[index].tasks.unshift({
                 name: this.name,
                 description: this.description,
                 startDate: this.startDate,
