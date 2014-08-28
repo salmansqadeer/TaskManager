@@ -65,8 +65,8 @@
 	                    <thead>
 		                    <tr>
 		                        <th></th>
-		                        <th>Name</th>
-		                        <th>Description</th>
+		                        <th>Task</th>
+		                        <!-- <th>Description</th> -->
 		                        <th>Start Date</th>
 		                        <th>Due Date</th>
 		                        <th></th>
@@ -86,9 +86,9 @@
 		                                    <td>
 		                                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
 		                                    </td>
-		                                    <td>
+		                                    <!-- <td>
 		                                        <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
-		                                    </td>
+		                                    </td> -->
 		                                    <td>
 		                                        <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
 		                                    </td>
@@ -117,7 +117,7 @@
 		                        	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)">
 		                        </td>
 		                        <td>{{task.name}}</td>
-		                        <td>{{task.description}}</td>
+		                        <!-- <td>{{task.description}}</td> -->
 		                        <td>{{task.startDate}}</td>
 		                        <td>{{task.dueDate}}</td>
 		                        

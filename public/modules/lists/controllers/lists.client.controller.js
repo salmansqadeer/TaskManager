@@ -12,10 +12,16 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         	SelectedList.setSelectedList( index );
         	return $scope.lists[index].tasks;
         };
+// LEARN MORE
+   //      function getSelectedList() {
+			// return SelectedList.getSelectedList();
+   //      };
 
-        $scope.getSelectedList = function () {
-        	return SelectedList.getSelectedList();
-        };
+   //      $scope.getSelectedList = getSelectedList;
+
+		$scope.getSelectedList = function() {
+			return SelectedList.getSelectedList(); 
+		};
 
         // Creates a new task for a specific list
         $scope.createTask = function(index) {
@@ -43,8 +49,8 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
         // Remove a task from a specific list
         $scope.removeTask = function (taskIndex) {
-        	$scope.lists[$scope.getSelectedList()].tasks.splice(taskIndex, 1);
-        	$scope.findTasks($scope.getSelectedList());
+        	$scope.lists[SelectedList.getSelectedList()].tasks.splice(taskIndex, 1);
+        	$scope.findTasks(SelectedList.getSelectedList());
         };
 
         // Toggle Status
@@ -55,7 +61,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 				
 				// Go through all Tasks and find the right task to change
 
-				var activeTask = $scope.lists[$scope.getSelectedList()].tasks;
+				var activeTask = $scope.lists[SelectedList.getSelectedList()].tasks;
 
 				for (var t in activeTask) {
 
@@ -71,7 +77,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 					}
 				}
 
-				$scope.lists[$scope.getSelectedList()].$update(function() {
+				$scope.lists[SelectedList.getSelectedList()].$update(function() {
 	            }, function(errorResponse) {
 	                $scope.error = errorResponse.data.message;
 	            });
