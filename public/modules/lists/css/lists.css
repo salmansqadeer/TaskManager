@@ -13,3 +13,7 @@
 .lists .form-control {
 	margin-bottom: 10px;
 }
+
+.newListForm .btn {
+	float: right;
+}

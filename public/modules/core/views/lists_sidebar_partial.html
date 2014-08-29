@@ -21,16 +21,17 @@
 			</ul>
 
     	<!-- ADD NEW LIST -->
-		<form name="newListForm" id="newListForm" novalidate>
-            <fieldset>
+		<form name="newListForm" id="newListForm" class="newListForm" novalidate>
+            <formgroup>
                 <td>
                     <input type="text" data-ng-model="listName" id="listName" class="form-control" placeholder="Name" required>
                 </td>
 
 				<td>
-					<input type="submit" class="btn btn-default" ng-click="create()">
+
+				  <button type="submit" class="btn btn-default" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></button>
 				</td>
-        	</fieldset>
+        	</formgroup>
         </form>
 
 	</div>

@@ -7,17 +7,40 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
         // MY FUNCTIONS
 
+        // Toggle Status
+        // TODO this is a terrible method - probably should put this into a Service I guess?
+        // TODO - should all Task related functions be put into their own service?
+		$scope.toggleStatus = function ( task ) {
+			if ( task ) {
+				
+				// Go through all Tasks and find the right task to change
+				var activeTask = $scope.lists[SelectedList.getSelectedList()].tasks;
+
+				for (var t in activeTask) {
+
+					if (activeTask[t]._id === task._id) {
+						if ( activeTask[t].status ) {
+							activeTask[t].status = false;
+						}
+						else {
+							activeTask[t].status = true;
+						}
+					}
+				}
+
+				// Update the List
+				$scope.lists[SelectedList.getSelectedList()].$update(function() {
+	            }, function(errorResponse) {
+	                $scope.error = errorResponse.data.message;
+	            });
+			}
+		};
+
         // Returns all of the tasks for a specific List
         $scope.findTasks = function(index) {
         	SelectedList.setSelectedList( index );
         	return $scope.lists[index].tasks;
         };
-// LEARN MORE
-   //      function getSelectedList() {
-			// return SelectedList.getSelectedList();
-   //      };
-
-   //      $scope.getSelectedList = getSelectedList;
 
 		$scope.getSelectedList = function() {
 			return SelectedList.getSelectedList(); 
@@ -53,39 +76,11 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         	$scope.findTasks(SelectedList.getSelectedList());
         };
 
-        // Toggle Status
-        // TODO this is a terrible method - probably should put this into a Service I guess?
-        // TODO - should all Task related functions be put into their own service?
-		$scope.toggleStatus = function ( task ) {
-			if ( task ) {
-				
-				// Go through all Tasks and find the right task to change
-
-				var activeTask = $scope.lists[SelectedList.getSelectedList()].tasks;
-
-				for (var t in activeTask) {
-
-					if (activeTask[t]._id === task._id) {
-						if ( activeTask[t].status ) {
-							activeTask[t].status = false;
-							$scope.update();
-						}
-						else {
-							activeTask[t].status = true;
-						}
-
-					}
-				}
-
-				$scope.lists[SelectedList.getSelectedList()].$update(function() {
-	            }, function(errorResponse) {
-	                $scope.error = errorResponse.data.message;
-	            });
-
-
-
-			}
-		};
+			// LEARN MORE
+   	//      function getSelectedList() {
+			// return SelectedList.getSelectedList();
+    //      };
+    //      $scope.getSelectedList = getSelectedList;
 
         // CRUD
 
@@ -136,7 +131,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 			var list = $scope.list ;
 
 			list.$update(function() {
-				// $location.path('lists/' + list._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

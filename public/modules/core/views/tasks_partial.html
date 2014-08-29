@@ -2,27 +2,16 @@
 <div class="col-md-9">
 	<div class="tasks">
 
-
-		<!-- LIST HEADING -->
-		<h2 data-ng-bind="lists[ getSelectedList() ].name"></h2>
-	    <small class="list-group-item-text">
-			Posted on
-			<span data-ng-bind="lists[ getSelectedList() ].created | date:'medium'"></span>
-			by
-			<span data-ng-bind="lists[ getSelectedList() ].user.displayName"></span>
-		</small>
-
-		
 	        <!-- Table -->
-	        <table class="table">
+	        <table class="table table-hover">
 	            <thead>
 	                <tr>
-	                    <th></th>
-	                    <th>Task</th>
+	                    <th class='col-md-1' ></th>
+	                    <th class='col-md-8' > {{lists[ getSelectedList() ].name}} </th>
 	                    <!-- <th>Description</th> -->
-	                    <th>Start Date</th>
-	                    <th>Due Date</th>
-	                    <th></th>
+	                    <th class='col-md-1' >Start Date</th>
+	                    <th class='col-md-1' >Due Date</th>
+	                    <th class='col-md-1' ></th>
 	                </tr>
 	            </thead>
 				<tbody>
@@ -62,17 +51,22 @@
 	                    </form>
 	                </tr>
 
-
 	                <!-- LIST ALL TASKS -->
 
 	                <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
 	                    <td>
-	                    	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)">
+	                    	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
 	                    </td>
-	                    <td>{{task.name}}</td>
+	                    <td>
+	                    	{{task.name}}
+	                    </td>
 	                    <!-- <td>{{task.description}}</td> -->
-	                    <td>{{task.startDate}}</td>
-	                    <td>{{task.dueDate}}</td>
+	                    <td>
+	        				<span data-ng-bind="task.startDate | date:'mediumDate'"></span>
+	                    </td>
+	                    <td>
+							<span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
+	                    </td>
 	                    
 	                    <td>
 	                    	<!-- Delete a task -->
@@ -85,8 +79,7 @@
 	                </tr>
 					
 	            </tbody>
-	                
-
 	        </table>
+
 	</div>
 </div>
