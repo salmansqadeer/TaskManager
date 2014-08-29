@@ -81,5 +81,10 @@
 	            </tbody>
 	        </table>
 
+        <!-- Notify the user if there are no tasks -->
+        <div class="alert alert-warning text-center" data-ng-hide="lists[ getSelectedList() ].tasks.length">
+	    	No Tasks added to this list yet, why don't you add one?
+	    </div>
+
 	</div>
 </div>
