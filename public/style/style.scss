@@ -1,0 +1,29 @@
+/* LIST SIDEBAR STYLES */
+
+.lists {
+	
+	ul {
+	list-style-type: none;
+	}
+
+	li {
+		.delete {
+			display: none;
+
+			:hover {
+				display: inline;
+			}
+		}
+	}
+
+	.form-control {
+		margin-bottom: 10px;
+	}
+
+	.newListForm {
+		.btn {
+			float: right;
+		}
+	}
+}
+

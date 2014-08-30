@@ -34,6 +34,9 @@
 
 	<!--Application CSS Files-->
 	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">
+	<!-- TODO - figure out how to get this to automatically render and not explicitely include it -->
+	<!-- This is the CSS coming from SCSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	{% endfor %}
 
 	<!-- HTML5 Shim -->
