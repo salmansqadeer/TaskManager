@@ -1,8 +1,11 @@
 /* LIST SIDEBAR STYLES */
+.col-md-2 {
+  border-right: 1px solid #e1e1e1;
+  height: 100%; }
+
 .left_sidebar {
-  color: #212121;
+  color: #5E5E5E;
   font-weight: bold;
-  letter-spacing: -1pt;
   word-spacing: 2pt;
   font-family: helvetica, sans-serif;
   line-height: 1; }
@@ -10,26 +13,32 @@
     margin: 40px 0 0 0; }
   .left_sidebar .form-control {
     font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 100;
-    margin: 35px 0 0 0; }
+    font-weight: 100; }
   .left_sidebar .section_title {
     text-transform: uppercase;
     padding: 35px 0 0 0; }
+  .left_sidebar .add-new-sidebar-item {
+    color: #40A3F5;
+    text-align: center;
+    display: inline-block;
+    width: 100%; }
   .left_sidebar .sidebar-table table {
     width: 100%;
     margin: 25px 0 0 0; }
     .left_sidebar .sidebar-table table thead {
       text-transform: uppercase; }
     .left_sidebar .sidebar-table table tr:hover td {
-      background-color: #F9F9F9;
-      color: #40A3F5; }
+      background-color: #e1e1e1; }
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }
     .left_sidebar .sidebar-table table td {
-      padding: 15px 0 15px 0; }
+      padding: 15px 0 15px 15px; }
       .left_sidebar .sidebar-table table td a {
         color: #212121;
         text-decoration: none; }
+    .left_sidebar .sidebar-table table .activeList {
+      color: #40A3F5;
+      background-color: #F9F9F9; }
   .left_sidebar .lists .form-control {
     margin-bottom: 10px; }
   .left_sidebar .lists .newListForm .btn {
@@ -38,24 +47,40 @@
 .signed_in_header {
   background-color: #FAFAFA; }
 
-/* TASK STYLES */
-.list_name_display {
-  font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 100;
-  font-size: 48px;
-  margin-bottom: -10px; }
+/*TASK STYLES */
+.tasks {
+  /*** custom checkboxes ***/ }
+  .tasks .list_name_display {
+    font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
+    font-size: 48px;
+    margin-bottom: -10px; }
+  .tasks .completedTask {
+    background-color: #F2F2F2;
+    color: #999; }
+  .tasks tr .delete {
+    display: none; }
+  .tasks tr:hover .delete {
+    display: inline; }
+  .tasks label {
+    margin: -5px 0 -5px 5px; }
+  .tasks input[type=checkbox] {
+    display: none;
+    /* to hide the checkbox itself */
+    /* checked icon */
+    /* allow space for check mark */ }
+    .tasks input[type=checkbox] + label:before {
+      /* unchecked icon */
+      font-family: FontAwesome;
+      font-size: 24px;
+      display: inline-block;
+      content: "\f096";
+      letter-spacing: 10px;
+      margin: 0; }
+    .tasks input[type=checkbox]:checked + label:before {
+      content: "\f046";
+      letter-spacing: 5px; }
 
-.completedTask {
-  background-color: #F2F2F2;
-  color: #999; }
-
-/*.tasks tr .delete {
-	display: none;	
-}
-
-.tasks tr:hover .delete {
-	display: inline;	
-}*/
 .content {
   margin: 0 0 0 0; }
 

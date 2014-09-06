@@ -1,27 +1,55 @@
-/* TASK STYLES */
+ /*TASK STYLES */
+
+.tasks {
+
+	.list_name_display {
+		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	   	font-weight: 100;
+	   	font-size: 48px;
+	   	margin-bottom: -10px;
+	}
 
 
+	.completedTask {
+		background-color: #F2F2F2;
+		color: #999;
+	}
 
-.list_name_display {
-	font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 100;
-   	font-size: 48px;
-   	margin-bottom: -10px;
+	tr .delete {
+		display: none;	
+	}
+
+	tr:hover .delete {
+		display: inline;	
+	}
+
+
+	/*** custom checkboxes ***/
+
+	label {
+			margin: -5px 0 -5px 5px;
+	}
+
+	input[type=checkbox] {
+		display: none; /* to hide the checkbox itself */		
+
+	  	+ label:before {
+	  		/* unchecked icon */
+			
+		    font-family: FontAwesome;
+		    font-size: 24px;
+		    display: inline-block;
+		    content: "\f096";
+		    letter-spacing: 10px;
+		    margin: 0;
+		}
+
+		/* checked icon */
+		/* allow space for check mark */
+
+		&:checked + label:before {
+		    content: "\f046";
+		    letter-spacing: 5px;
+		}
+	}
 }
-
-
-.completedTask {
-	background-color: #F2F2F2;
-	color: #999;
-}
-
-
-
-
-/*.tasks tr .delete {
-	display: none;	
-}
-
-.tasks tr:hover .delete {
-	display: inline;	
-}*/

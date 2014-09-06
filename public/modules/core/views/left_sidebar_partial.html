@@ -21,7 +21,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr data-ng-repeat = "list in lists" ng-click="findTasks($index)">
+					<tr data-ng-repeat = "list in lists" ng-click="findTasks($index)" ng-class="{activeList: getSelectedList() == $index}">
 						<td>
 							<!-- Each List Item -->
 							{{list.name}} 
@@ -30,7 +30,7 @@
 
 					<tr ng-class="{ 'hidden': ! showNewToDoForm }">
 						
-				    	<!-- ADD NEW LIST -->
+				    	<!-- ADD NEW LIST FORM -->
 						<form name="newListForm" id="newListForm" class="newListForm" novalidate>
 				            <formgroup>
 				                <td>
@@ -49,13 +49,10 @@
 			</table>		
 		</div>
 
-
-        <div class="newToDo">
-            <button type="button" class="btn" ng-click="showNewToDoForm = ! showNewToDoForm" >
-                New ToDo
-            </button>
-        </div>
-
+		<!--SHOW ADD NEW LIST BUTTON -->
+        
+        <i class="fa fa-plus-circle fa-2x add-new-sidebar-item" style=" text-align: middle;" ng-click="showNewToDoForm = ! showNewToDoForm"></i>
+        
     </div>
 
 </div>

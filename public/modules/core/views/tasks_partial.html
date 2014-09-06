@@ -21,8 +21,8 @@
             </thead>
 			<tbody>
 
+            	<!-- Add New Task to this Todo list-->
 				<tr>
-                	<!-- Add New Task to this Todo list-->
                     <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
                             <div class="form-group">
                                 <tr>
@@ -57,14 +57,17 @@
 
                 <!-- LIST ALL TASKS -->
 
-                <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
+                <tr class="vert-align" data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
                     <td>
-                    	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
+                    	<input id="{{$index}}" type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
+
+                    	<!-- This label holds the custom checkbox styled via css -->
+						<label for="{{$index}}"></label>
+
                     </td>
                     <td>
                     	{{task.name}}
                     </td>
-                    <!-- <td>{{task.description}}</td> -->
                     <td>
         				<span data-ng-bind="task.startDate | date:'mediumDate'"></span>
                     </td>

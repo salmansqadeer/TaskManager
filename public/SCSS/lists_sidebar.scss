@@ -1,10 +1,15 @@
 /* LIST SIDEBAR STYLES */
 
+.col-md-2 {
+	border-right: 1px solid $grey;
+	height: 100%;
+}
+
 .left_sidebar {
 
-	color: $darkGrey;
+	color: $mediumGrey;
 	font-weight:bold;
-	letter-spacing:-1pt;
+	// letter-spacing:-1pt;
 	word-spacing:2pt;
 	font-family:helvetica, sans-serif;line-height:1;
 
@@ -15,12 +20,18 @@
 	.form-control {
 		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	   	font-weight: 100;
-		margin: 35px 0 0 0;
 	}
 
 	.section_title {
 		text-transform: uppercase;
 		padding: 35px 0 0 0;
+	}
+
+	.add-new-sidebar-item {
+		color: $activeBlue;
+		text-align: center;
+		display: inline-block;
+	    width: 100%;
 	}
 
 	.sidebar-table {
@@ -30,15 +41,13 @@
 			width: 100%;
 			margin: 25px 0 0 0;
 
-
 			thead {
 				text-transform: uppercase;
 			}
 
 			// When you hover on a row, highlight td
 			tr:hover td {				
-				background-color: $lightGrey;
-				color: $activeBlue;
+				background-color: $grey;				
 			}
 
 			th {
@@ -46,12 +55,17 @@
 			}
 
 			td {
-				padding: 15px 0 15px 0;
+				padding: 15px 0 15px 15px;
 
 				a {
 					color: $darkGrey;
 					text-decoration: none;
 				}
+			}
+
+			.activeList {
+				color: $activeBlue;
+				background-color: $lightGrey;
 			}
 		}
 	}
