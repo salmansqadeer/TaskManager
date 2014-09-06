@@ -9,3 +9,21 @@
   margin-bottom: 10px; }
 .lists .newListForm .btn {
   float: right; }
+
+.signed_in_header {
+  background-color: #FAFAFA; }
+
+/* TASK STYLES */
+.completedTask {
+  background-color: #F2F2F2;
+  color: #999; }
+
+/*.tasks tr .delete {
+	display: none;	
+}
+
+.tasks tr:hover .delete {
+	display: inline;	
+}*/
+
+/*# sourceMappingURL=style.css.map */

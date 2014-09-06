@@ -2,13 +2,13 @@
 <div class="col-md-9">
 	<div class="tasks">
 
+
 	        <!-- Table -->
 	        <table class="table table-hover">
 	            <thead>
 	                <tr>
 	                    <th class='col-md-1' ></th>
-	                    <th class='col-md-8' > {{lists[ getSelectedList() ].name}} </th>
-	                    <!-- <th>Description</th> -->
+	                    <th class='col-md-8' > <h1>{{lists[ getSelectedList() ].name}}</h1>  </th>
 	                    <th class='col-md-1' >Start Date</th>
 	                    <th class='col-md-1' >Due Date</th>
 	                    <th class='col-md-1' ></th>
@@ -18,8 +18,7 @@
 
 					<tr>
 	                	<!-- Add New Task to this Todo list-->
-	                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>
-	                        <fieldset>
+	                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
 	                            <div class="form-group">
 	                                <tr>
 	                                <!--Checkbox (empty)-->
@@ -47,7 +46,7 @@
 	                            <div data-ng-show="error" class="text-danger">
 	                                <strong data-ng-bind="error"></strong>
 	                            </div>
-	                        </fieldset>
+	                        
 	                    </form>
 	                </tr>
 

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAIC,SAAG;EACH,eAAe,EAAE,IAAI;AAIpB,iBAAQ;EACP,OAAO,EAAE,IAAI;EAEb,wBAAO;IACN,OAAO,EAAE,MAAM;AAKlB,oBAAc;EACb,aAAa,EAAE,IAAI;AAInB,wBAAK;EACJ,KAAK,EAAE,KAAK;;ACrBf,iBAAkB;EACjB,gBAAgB,ECHA,OAAO;;;ACCxB,cAAe;EACd,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,IAAI",
+"sources": ["../style/lists_sidebar.scss","../style/signed_in_header.scss","../style/mainStyle.scss","../style/tasks.scss"],
+"names": [],
+"file": "style.css"
+}
