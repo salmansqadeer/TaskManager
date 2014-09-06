@@ -7,10 +7,10 @@
   font-family: helvetica, sans-serif;
   line-height: 1; }
   .left_sidebar .search_bar {
-    font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 100;
     margin: 40px 0 0 0; }
   .left_sidebar .form-control {
+    font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
     margin: 35px 0 0 0; }
   .left_sidebar .section_title {
     text-transform: uppercase;
@@ -21,8 +21,7 @@
     .left_sidebar .sidebar-table table thead {
       text-transform: uppercase; }
     .left_sidebar .sidebar-table table tr:hover td {
-      background-color: #F9F9F9; }
-    .left_sidebar .sidebar-table table tr:hover a {
+      background-color: #F9F9F9;
       color: #40A3F5; }
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }

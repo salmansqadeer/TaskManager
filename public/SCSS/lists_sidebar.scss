@@ -9,15 +9,14 @@
 	font-family:helvetica, sans-serif;line-height:1;
 
 	.search_bar {
-		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-	   	font-weight: 100;
 		margin: 40px 0 0 0;
 	}
 
 	.form-control {
+		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	   	font-weight: 100;
 		margin: 35px 0 0 0;
 	}
-
 
 	.section_title {
 		text-transform: uppercase;
@@ -38,11 +37,8 @@
 
 			// When you hover on a row, highlight td
 			tr:hover td {				
-					background-color: $lightGrey;
-			}
-
-			tr:hover a {
-			    color: $activeBlue;
+				background-color: $lightGrey;
+				color: $activeBlue;
 			}
 
 			th {
