@@ -1,6 +1,9 @@
 <!-- LIST DETAILS -->
 <div class="left_sidebar">
 
+
+
+
 	<div class="search_bar">
 		<input type="text" id="searchBar" class="form-control" placeholder="Search">
 	</div>
@@ -8,32 +11,29 @@
 
 	<div class="lists">
 
-		<div class="section_title">
-			Lists
+		<div class="table table-hover sidebar-table">
+			<table>
+				<thead>
+					<tr>
+						<th>
+							Lists
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-ng-repeat = "list in lists">
+						<td>
+	
+							<!-- Each List Item -->
+							<a ng-click="findTasks($index)"> {{list.name}} </a>							
+						</td>
+					</tr>
+	
+				</tbody>
+			</table>		
 		</div>
 
-			<ul>
-				
-				<li data-ng-repeat = "list in lists">
-					<div class="hover_box">	
-						<div class="overlay">
-
-							<!-- Each List Item -->
-							<a ng-click="findTasks($index)"> {{list.name}} </a>
-
-							<!-- Delete a List -->
-							<div class="pull-right" data-ng-show="authentication.user._id == list.user._id">
-		                        <a class="delete" ng-click="remove(list)">
-		                            <i class="glyphicon glyphicon-trash"></i>
-		                        </a>
-		                	</div>
-
-						</div>
-                	</div>
-				</li>
-							
-			</ul>
-
+		
     	<!-- ADD NEW LIST -->
 		<form name="newListForm" id="newListForm" class="newListForm" novalidate>
             <formgroup>
