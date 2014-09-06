@@ -1,46 +1,53 @@
 <!-- LIST DETAILS -->
-<div class="col-md-3">
+<div class="left_sidebar">
 
-	<div class="left_sidebar">
-
-		<h3>Search Bar</h3>
-
-
-		<div class="lists">
-
-			<h2>Lists</h2>
-
-				<ul data-ng-repeat = "list in lists">
-
-					<li>
-						<!-- Each List Item -->
-						<a ng-click="findTasks($index)"> {{list.name}} </a>
-
-						<!-- Delete a List -->
-						<div class="pull-right" data-ng-show="authentication.user._id == list.user._id">
-	                        <a class="delete" ng-click="remove(list)">
-	                            <i class="glyphicon glyphicon-trash"></i>
-	                        </a>
-	                </div>
-					</li>
-
-				</ul>
-
-	    	<!-- ADD NEW LIST -->
-			<form name="newListForm" id="newListForm" class="newListForm" novalidate>
-	            <formgroup>
-	                <td>
-	                    <input type="text" data-ng-model="listName" id="listName" class="form-control" placeholder="Name" required>
-	                </td>
-
-					<td>
-
-					  <button type="submit" class="btn btn-default" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></button>
-					</td>
-	        	</formgroup>
-	        </form>
-
-	    </div>
-
+	<div class="search_bar">
+		<input type="text" id="searchBar" class="form-control" placeholder="Search">
 	</div>
+    
+
+	<div class="lists">
+
+		<div class="section_title">
+			Lists
+		</div>
+
+			<ul>
+				
+				<li data-ng-repeat = "list in lists">
+					<div class="hover_box">	
+						<div class="overlay">
+
+							<!-- Each List Item -->
+							<a ng-click="findTasks($index)"> {{list.name}} </a>
+
+							<!-- Delete a List -->
+							<div class="pull-right" data-ng-show="authentication.user._id == list.user._id">
+		                        <a class="delete" ng-click="remove(list)">
+		                            <i class="glyphicon glyphicon-trash"></i>
+		                        </a>
+		                	</div>
+
+						</div>
+                	</div>
+				</li>
+							
+			</ul>
+
+    	<!-- ADD NEW LIST -->
+		<form name="newListForm" id="newListForm" class="newListForm" novalidate>
+            <formgroup>
+                <td>
+                    <input type="text" data-ng-model="listName" id="listName" class="form-control" placeholder="Name" required>
+                </td>
+
+				<td>
+
+				  <button type="submit" class="btn btn-default" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></button>
+				</td>
+        	</formgroup>
+        </form>
+
+    </div>
+
 </div>

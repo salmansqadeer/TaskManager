@@ -1,89 +1,93 @@
 <!-- TASK DETAILS -->
-<div class="col-md-9">
-	<div class="tasks">
 
+<div class="tasks">
 
-	        <!-- Table -->
-	        <table class="table table-hover">
-	            <thead>
-	                <tr>
-	                    <th class='col-md-1' ></th>
-	                    <th class='col-md-8' > <h1>{{lists[ getSelectedList() ].name}}</h1>  </th>
-	                    <th class='col-md-1' >Start Date</th>
-	                    <th class='col-md-1' >Due Date</th>
-	                    <th class='col-md-1' ></th>
-	                </tr>
-	            </thead>
-				<tbody>
+        <!-- Table -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class='col-md-1' ></th>
+                    <th class='col-md-8' >
 
-					<tr>
-	                	<!-- Add New Task to this Todo list-->
-	                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
-	                            <div class="form-group">
-	                                <tr>
-	                                <!--Checkbox (empty)-->
-	                                <td></td>
+                    	<div class="list_name_display">
+							{{lists[ getSelectedList() ].name}}
+                    	</div>
 
-	                                <td>
-	                                    <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
-	                                </td>
-	                                <!-- <td>
-	                                    <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
-	                                </td> -->
-	                                <td>
-	                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
-	                                </td>
-	                                <td>
-	                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
-	                                </td>
+					</th>
+                    <th class='col-md-1' >Start Date</th>
+                    <th class='col-md-1' >Due Date</th>
+                    <th class='col-md-1' ></th>
+                </tr>
+            </thead>
+			<tbody>
 
-									<td><input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())"></td>
+				<tr>
+                	<!-- Add New Task to this Todo list-->
+                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
+                            <div class="form-group">
+                                <tr>
+                                <!--Checkbox (empty)-->
+                                <td></td>
 
-	                                </tr>
+                                <td>
+                                    <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                                </td>
+                                <!-- <td>
+                                    <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
+                                </td> -->
+                                <td>
+                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
+                                </td>
+                                <td>
+                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
+                                </td>
 
-	                            </div>
+								<td><input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())"></td>
 
-	                            <div data-ng-show="error" class="text-danger">
-	                                <strong data-ng-bind="error"></strong>
-	                            </div>
-	                        
-	                    </form>
-	                </tr>
+                                </tr>
 
-	                <!-- LIST ALL TASKS -->
+                            </div>
 
-	                <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
-	                    <td>
-	                    	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
-	                    </td>
-	                    <td>
-	                    	{{task.name}}
-	                    </td>
-	                    <!-- <td>{{task.description}}</td> -->
-	                    <td>
-	        				<span data-ng-bind="task.startDate | date:'mediumDate'"></span>
-	                    </td>
-	                    <td>
-							<span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
-	                    </td>
-	                    
-	                    <td>
-	                    	<!-- Delete a task -->
-		                    <div class="pull-right delete">
-		                        <a ng-click="removeTask($index)">
-		                            <i class="glyphicon glyphicon-trash"></i>
-		                        </a>
-		                    </div>
-	                    </td>
-	                </tr>
-					
-	            </tbody>
-	        </table>
+                            <div data-ng-show="error" class="text-danger">
+                                <strong data-ng-bind="error"></strong>
+                            </div>
+                        
+                    </form>
+                </tr>
 
-        <!-- Notify the user if there are no tasks -->
-        <div class="alert alert-warning text-center" data-ng-hide="lists[ getSelectedList() ].tasks.length">
-	    	No Tasks added to this list yet, why don't you add one?
-	    </div>
+                <!-- LIST ALL TASKS -->
 
-	</div>
+                <tr data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
+                    <td>
+                    	<input type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
+                    </td>
+                    <td>
+                    	{{task.name}}
+                    </td>
+                    <!-- <td>{{task.description}}</td> -->
+                    <td>
+        				<span data-ng-bind="task.startDate | date:'mediumDate'"></span>
+                    </td>
+                    <td>
+						<span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
+                    </td>
+                    
+                    <td>
+                    	<!-- Delete a task -->
+	                    <div class="pull-right delete">
+	                        <a ng-click="removeTask($index)">
+	                            <i class="glyphicon glyphicon-trash"></i>
+	                        </a>
+	                    </div>
+                    </td>
+                </tr>
+				
+            </tbody>
+        </table>
+
+    <!-- Notify the user if there are no tasks -->
+    <div class="alert alert-warning text-center" data-ng-hide="lists[ getSelectedList() ].tasks.length">
+    	No Tasks added to this list yet, why don't you add one?
+    </div>
+
 </div>

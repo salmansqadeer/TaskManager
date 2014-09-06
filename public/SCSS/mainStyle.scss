@@ -1,9 +1,15 @@
 
 $ultraLightGrey: #FAFAFA;
 $lightGrey: #F9F9F9;
+$grey: #e1e1e1;
+$darkGrey: #212121;
 
+$activeBlue: #40A3F5;
 
 @import 'lists_sidebar';
 @import 'signed_in_header';
 @import 'tasks';
 
+.content {
+	margin: 0 0 0 0;
+}

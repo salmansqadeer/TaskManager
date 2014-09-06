@@ -17,10 +17,17 @@
 	    <div class="row">
 
 	    	<!-- LISTS SIDEBAR -->
-			<div ng-include=" '/modules/core/views/left_sidebar_partial.html' "></div>
+
+	    	<div class="col-md-2">
+				<div ng-include=" '/modules/core/views/left_sidebar_partial.html' "></div>
+			</div>
 
 			<!-- TASKS SIDEBAR -->
-			<div ng-include=" '/modules/core/views/tasks_partial.html' "></div>			
+			<div class="col-md-10">
+				<div ng-include=" '/modules/core/views/tasks_partial.html' "></div>			
+			</div>
+
+			
 
 	    </div>
 
