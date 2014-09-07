@@ -1,9 +1,6 @@
 <!-- LIST DETAILS -->
 <div class="left_sidebar">
 
-
-
-
 	<div class="search_bar">
 		<input type="text" id="searchBar" class="form-control" placeholder="Search">
 	</div>
@@ -24,23 +21,31 @@
 					<tr data-ng-repeat = "list in lists" ng-click="findTasks($index)" ng-class="{activeList: getSelectedList() == $index}">
 						<td>
 							<!-- Each List Item -->
-							{{list.name}} 
+							{{list.name}}
+
+							<div class="delete-list">
+								<i class="fa fa-minus-circle" ng-click="remove(list)"></i>
+							</div>
+
 						</td>
 					</tr>
 
 					<tr ng-class="{ 'hidden': ! showNewToDoForm }">
 						
 				    	<!-- ADD NEW LIST FORM -->
-						<form name="newListForm" id="newListForm" class="newListForm" novalidate>
+						<form name="newListForm" id="newListForm" class="newListForm" ng-submit="create()" novalidate>
 				            <formgroup>
 				                <td>
-				                    <input type="text" data-ng-model="listName" id="listName" class="form-control" placeholder="New List" required>
+				                    <input 
+				                    	type="text" 
+				                    	data-ng-model="listName" 
+				                    	id="listName" 
+				                    	class="form-control" 
+				                    	ng-keyup="$event.keyCode == 13 && create()" placeholder="New List" 
+				                    	required
+			                    	>
+
 				                </td>
-
-								<td>
-
-								  <button type="submit" class="btn btn-default" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></button>
-								</td>
 				        	</formgroup>
 				        </form>
 					</tr>

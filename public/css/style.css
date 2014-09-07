@@ -22,6 +22,8 @@
     text-align: center;
     display: inline-block;
     width: 100%; }
+  .left_sidebar .delete-list {
+    float: right; }
   .left_sidebar .sidebar-table table {
     width: 100%;
     margin: 25px 0 0 0; }
@@ -32,7 +34,7 @@
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }
     .left_sidebar .sidebar-table table td {
-      padding: 15px 0 15px 15px; }
+      padding: 15px 15px 15px 15px; }
       .left_sidebar .sidebar-table table td a {
         color: #212121;
         text-decoration: none; }
@@ -41,6 +43,10 @@
       background-color: #F9F9F9; }
   .left_sidebar .lists .form-control {
     margin-bottom: 10px; }
+  .left_sidebar .lists .newListForm td {
+    padding: none; }
+  .left_sidebar .lists .newListForm input[type=text] {
+    width: 80%; }
   .left_sidebar .lists .newListForm .btn {
     float: right; }
 

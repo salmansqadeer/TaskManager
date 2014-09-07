@@ -27,11 +27,17 @@
 		padding: 35px 0 0 0;
 	}
 
+	// Button at the bottom of every sidebar section
 	.add-new-sidebar-item {
 		color: $activeBlue;
 		text-align: center;
 		display: inline-block;
 	    width: 100%;
+	}
+
+	// Delete Sidebar List Item
+	.delete-list {
+		float: right;
 	}
 
 	.sidebar-table {
@@ -55,7 +61,7 @@
 			}
 
 			td {
-				padding: 15px 0 15px 15px;
+				padding: 15px 15px 15px 15px;
 
 				a {
 					color: $darkGrey;
@@ -78,6 +84,15 @@
 		}
 
 		.newListForm {
+
+			td {
+				padding: none;
+			}
+
+			input[type=text] {
+				width: 80%;				
+			}
+
 			.btn {
 				float: right;
 			}
