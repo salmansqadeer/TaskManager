@@ -30,7 +30,7 @@
 						</td>
 					</tr>
 
-					<tr ng-class="{ 'hidden': ! showNewToDoForm }">
+					<tr ng-hide="showNewToDoForm">
 						
 				    	<!-- ADD NEW LIST FORM -->
 						<form name="newListForm" id="newListForm" class="newListForm" ng-submit="create()" novalidate>
@@ -41,7 +41,8 @@
 				                    	data-ng-model="listName" 
 				                    	id="listName" 
 				                    	class="form-control" 
-				                    	ng-keyup="$event.keyCode == 13 && create()" placeholder="New List" 
+				                    	ng-keyup="$event.keyCode == 13 && create()" 
+				                    	placeholder="New List" 
 				                    	required
 			                    	>
 

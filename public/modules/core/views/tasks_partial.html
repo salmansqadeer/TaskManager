@@ -1,6 +1,10 @@
 <!-- TASK DETAILS -->
 
-<div class="tasks">
+<div class="tasks" ng-init = "showNewTaskForm = false ">
+
+		<div class="btn btn-default" ng-click="showNewTaskForm = ! showNewTaskForm">
+			New Task
+		</div>
 
         <!-- Table -->
         <table class="table table-hover">
@@ -22,29 +26,29 @@
 			<tbody>
 
             	<!-- Add New Task to this Todo list-->
-				<tr>
+				<tr ng-show = "showNewTaskForm">
                     <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
                             <div class="form-group">
-                                <tr>
-                                <!--Checkbox (empty)-->
-                                <td></td>
+                   
+	                                <!--Checkbox (empty)-->
+	                                <td class='col-md-1'></td>
 
-                                <td>
-                                    <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
-                                </td>
-                                <!-- <td>
-                                    <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
-                                </td> -->
-                                <td>
-                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
-                                </td>
-                                <td>
-                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
-                                </td>
+	                                <td class='col-md-8'>
+	                                    <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+	                                </td>
 
-								<td><input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())"></td>
+	                                <td class='col-md-1'>
+	                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
+	                                </td>
+	                                
+	                                <td class='col-md-1'>
+	                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
+	                                </td>
 
-                                </tr>
+									<td class='col-md-1'>
+										<input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())">
+									</td>
+
 
                             </div>
 
