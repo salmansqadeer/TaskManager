@@ -5,18 +5,21 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, hotkeys ) {
 		$scope.authentication = Authentication;
 
-
-		console.log(hotkeys);
-
 		hotkeys.add({
 		    combo: 'command+up',
-		    description: 'Goes up one list element if not at first list',
+		    description: 'Go Up One List',
 		    callback: function() {
-		    	console.log('it worked!');
 		    	SelectedList.goUpOneList();
 		    }
 		  });
 
+		hotkeys.add({
+		    combo: 'command+down',
+		    description: 'Go Down One List',
+		    callback: function() {
+		    	SelectedList.goDownOneList($scope.lists);
+		    }
+		  });
 
         // MY FUNCTIONS
 

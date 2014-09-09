@@ -27,6 +27,14 @@ angular.module('lists').factory('SelectedList', [
 					selectedList = selectedList - 1;	
 				}
 				return selectedList;
+			},
+
+			goDownOneList: function(index) {
+
+				if (selectedList < index.length) {
+					selectedList = selectedList + 1;
+				}
+				return selectedList;
 			}
 
 		};
