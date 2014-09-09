@@ -1,12 +1,22 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList',
-	function($scope, $stateParams, $location, Authentication, Lists, SelectedList ) {
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'hotkeys',
+	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, hotkeys ) {
 		$scope.authentication = Authentication;
 
 
-      // console.log('hotkeys');
+		console.log(hotkeys);
+
+		hotkeys.add({
+		    combo: 'command+up',
+		    description: 'Goes up one list element if not at first list',
+		    callback: function() {
+		    	console.log('it worked!');
+		    	SelectedList.goUpOneList();
+		    }
+		  });
+
 
         // MY FUNCTIONS
 
