@@ -5,10 +5,12 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList ) {
 		$scope.authentication = Authentication;
 
+
+      // console.log('hotkeys');
+
         // MY FUNCTIONS
 
         // Toggle Status
-        // TODO this is a terrible method - probably should put this into a Service I guess?
         // TODO - should all Task related functions be put into their own service?
 		$scope.toggleStatus = function ( task ) {
 			if ( task ) {
