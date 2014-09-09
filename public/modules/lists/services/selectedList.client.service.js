@@ -20,7 +20,23 @@ angular.module('lists').factory('SelectedList', [
 			setSelectedList: function( index ) {
 				selectedList = index;
 				return selectedList;
+			},
+
+			goUpOneList: function() {
+				if (selectedList > 0) {
+					selectedList = selectedList - 1;	
+				}
+				return selectedList;
+			},
+
+			goDownOneList: function(index) {
+
+				if (selectedList < index.length) {
+					selectedList = selectedList + 1;
+				}
+				return selectedList;
 			}
+
 		};
 	}
 ]);

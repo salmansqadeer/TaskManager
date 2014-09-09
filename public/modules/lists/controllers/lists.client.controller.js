@@ -1,12 +1,25 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList',
-	function($scope, $stateParams, $location, Authentication, Lists, SelectedList ) {
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'hotkeys',
+	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, hotkeys ) {
 		$scope.authentication = Authentication;
 
+		hotkeys.add({
+		    combo: 'command+up',
+		    description: 'Go Up One List',
+		    callback: function() {
+		    	SelectedList.goUpOneList();
+		    }
+		  });
 
-      // console.log('hotkeys');
+		hotkeys.add({
+		    combo: 'command+down',
+		    description: 'Go Down One List',
+		    callback: function() {
+		    	SelectedList.goDownOneList($scope.lists);
+		    }
+		  });
 
         // MY FUNCTIONS
 
