@@ -44,7 +44,7 @@
 
 <div class="tasks">
 
-<div add-task>Come Inside!</div>
+<!-- <div add-task>Come Inside!</div> -->
 
 
         <!-- Table -->
@@ -67,7 +67,7 @@
 			<tbody>
 
             	<!-- Add New Task to this Todo list-->
-				<tr data-ng-controller="ListsController" ng-show = "getTaskFormStatus()">
+				<tr ng-show = "getTaskFormStatus()">
                     <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
                             <div class="form-group">
                    
