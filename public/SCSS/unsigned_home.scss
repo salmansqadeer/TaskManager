@@ -2,15 +2,17 @@
 .unsigned-home {
 
 	.jumbotron {
-		background-image: url('../images/background.jpg');
-		background-repeat: no-repeat;
-	    background-attachment: fixed;
-	    background-position: center; 
+		// background-image: url('../images/background.jpg');
+		// background-repeat: no-repeat;
+		// background-attachment: fixed;
+		// background-position: center; 
+
+	 	background-color: $grey;
 	}
 
 	.headline {
 		color: white;
-		text-shadow: 0 0 8px $darkGrey;
+		// text-shadow: 0 0 8px $darkGrey;
 		font-size: 3.8em;
 		font-weight: 900;
 		letter-spacing: -3px;

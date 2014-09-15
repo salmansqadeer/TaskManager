@@ -1,6 +1,6 @@
 /* LIST SIDEBAR STYLES */
 .col-md-2 {
-  border-right: 1px solid #e1e1e1;
+  border-right: 1px solid #d1d1d1;
   height: 100%; }
 
 .left_sidebar {
@@ -30,7 +30,7 @@
     .left_sidebar .sidebar-table table thead {
       text-transform: uppercase; }
     .left_sidebar .sidebar-table table tr:hover td {
-      background-color: #e1e1e1; }
+      background-color: #d1d1d1; }
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }
     .left_sidebar .sidebar-table table td {
@@ -88,13 +88,9 @@
       letter-spacing: 5px; }
 
 .unsigned-home .jumbotron {
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; }
+  background-color: #d1d1d1; }
 .unsigned-home .headline {
   color: white;
-  text-shadow: 0 0 8px #212121;
   font-size: 3.8em;
   font-weight: 900;
   letter-spacing: -3px;
