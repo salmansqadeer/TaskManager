@@ -8,6 +8,8 @@ angular.module('lists').factory('SelectedTask', [
 		
 		var selectedTask = 0;
 
+		var showNewTaskForm = null;
+
 		// Public API
 		return {
 			getSelectedTask: function() {
@@ -32,6 +34,24 @@ angular.module('lists').factory('SelectedTask', [
 				}
 				return selectedTask;
 			},
+
+			getTaskFormStatus: function() {
+				return showNewTaskForm;
+			},
+
+			toggleTaskForm: function() {
+				if (showNewTaskForm === null) {
+					console.log('Show New Task Form');
+					console.log (showNewTaskForm);
+					showNewTaskForm = 1;
+
+				}
+				else {
+					console.log('Hide New Task Form');
+					console.log (showNewTaskForm);
+					showNewTaskForm = null;
+				}
+			}
 
 		};
 	}

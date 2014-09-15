@@ -42,13 +42,10 @@
 <!-- TASK DETAILS -->
 
 
-<div class="tasks" ng-init = "showNewTaskForm = false ">
+<div class="tasks">
 
 <div add-task>Come Inside!</div>
 
-		<div class="btn btn-default" ng-click="showNewTaskForm = ! showNewTaskForm">
-			New Task
-		</div>
 
         <!-- Table -->
         <table class="table table-hover">
@@ -70,7 +67,7 @@
 			<tbody>
 
             	<!-- Add New Task to this Todo list-->
-				<tr ng-show = "showNewTaskForm">
+				<tr data-ng-controller="ListsController" ng-show = "getTaskFormStatus()">
                     <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
                             <div class="form-group">
                    

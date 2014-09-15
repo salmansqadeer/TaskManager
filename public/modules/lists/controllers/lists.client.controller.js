@@ -50,6 +50,13 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		  });
 
 
+		hotkeys.add({
+		    combo: 'enter',
+		    description: 'Add New Task',		    
+		    callback: function() {
+				SelectedTask.toggleTaskForm();
+		    }
+		  });
 
 
 		// Service Getters
@@ -61,6 +68,10 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		$scope.getSelectedList = function() {
 			return SelectedList.getSelectedList(); 
 		};
+
+		$scope.getTaskFormStatus = function() {
+			return SelectedTask.getTaskFormStatus();
+		}
 
         // Toggle Status
         // TODO - should all Task related functions be put into their own service?
