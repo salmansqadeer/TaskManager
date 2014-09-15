@@ -17,37 +17,37 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		    }
 		  });
 
-		// hotkeys.add({
-		//     combo: 'command+down',
-		//     description: 'Go Down One List',
-		//     callback: function() {
-		//     	SelectedList.goDownOneList($scope.lists);
-		//     }
-		//   });
+		hotkeys.add({
+		    combo: 'command+down',
+		    description: 'Go Down One List',
+		    callback: function() {
+		    	SelectedList.goDownOneList($scope.lists);
+		    }
+		  });
 
-		// hotkeys.add({
-		//     combo: 'up',
-		//     description: 'Go Up One Task',		    
-		//     callback: function() {
-		//     	SelectedTask.goUpOneTask($scope.lists[ SelectedList.getSelectedList() ]);
-		//     }
-		//   });
+		hotkeys.add({
+		    combo: 'up',
+		    description: 'Go Up One Task',		    
+		    callback: function() {
+		    	SelectedTask.goUpOneTask($scope.lists[ SelectedList.getSelectedList() ]);
+		    }
+		  });
 
-		// hotkeys.add({
-		//     combo: 'down',
-		//     description: 'Go Down One Task',		    
-		//     callback: function() {
-		//     	SelectedTask.goDownOneTask($scope.lists[ SelectedList.getSelectedList() ]);
-		//     }
-		//   });
+		hotkeys.add({
+		    combo: 'down',
+		    description: 'Go Down One Task',		    
+		    callback: function() {
+		    	SelectedTask.goDownOneTask($scope.lists[ SelectedList.getSelectedList() ]);
+		    }
+		  });
 
-		// hotkeys.add({
-		//     combo: 'space',
-		//     description: 'Mark task as completed',		    
-		//     callback: function() {
-		// 		$scope.toggleStatus($scope.lists[ SelectedList.getSelectedList() ].tasks[ SelectedTask.getSelectedTask() ] );
-		//     }
-		//   });
+		hotkeys.add({
+		    combo: 'space',
+		    description: 'Mark task as completed',		    
+		    callback: function() {
+				$scope.toggleStatus($scope.lists[ SelectedList.getSelectedList() ].tasks[ SelectedTask.getSelectedTask() ] );
+		    }
+		  });
 
 
 		hotkeys.add({
