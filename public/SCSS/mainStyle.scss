@@ -13,6 +13,13 @@ $activeBlue: #40A3F5;
 @import 'unsigned_home';
 
 
+.activeTask {
+	color: $activeBlue;
+	background-color: $lightGrey;
+}
+
+
+
 .footer {
 	height: 60px;
 	background-color: $lightGrey;

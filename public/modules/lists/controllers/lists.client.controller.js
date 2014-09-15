@@ -1,15 +1,15 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'hotkeys',
-	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, hotkeys ) {
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'SelectedTask','hotkeys', 
+	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, SelectedTask, hotkeys ) {
 		$scope.authentication = Authentication;
 
         // MY FUNCTIONS
 
         // HOTKEYS
 
-		hotkeys.add({
+       	hotkeys.add({
 		    combo: 'command+up',
 		    description: 'Go Up One List',
 		    callback: function() {
@@ -25,11 +25,48 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		    }
 		  });
 
+		hotkeys.add({
+		    combo: 'up',
+		    description: 'Go Up One Task',		    
+		    callback: function() {
+		    	SelectedTask.goUpOneTask($scope.lists[ SelectedList.getSelectedList() ]);
+		    }
+		  });
+
+		hotkeys.add({
+		    combo: 'down',
+		    description: 'Go Down One Task',		    
+		    callback: function() {
+		    	SelectedTask.goDownOneTask($scope.lists[ SelectedList.getSelectedList() ]);
+		    }
+		  });
+
+		hotkeys.add({
+		    combo: 'space',
+		    description: 'Mark task as completed',		    
+		    callback: function() {
+				$scope.toggleStatus($scope.lists[ SelectedList.getSelectedList() ].tasks[ SelectedTask.getSelectedTask() ] );
+		    }
+		  });
+
+
+
+
+		// Service Getters
+
+		$scope.getSelectedTask = function() {
+			return SelectedTask.getSelectedTask(); 
+		};
+
+		$scope.getSelectedList = function() {
+			return SelectedList.getSelectedList(); 
+		};
+
         // Toggle Status
         // TODO - should all Task related functions be put into their own service?
 		$scope.toggleStatus = function ( task ) {
 			if ( task ) {
-				
+
 				// Go through all Tasks and find the right task to change
 				var activeTask = $scope.lists[SelectedList.getSelectedList()].tasks;
 
@@ -58,10 +95,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         	SelectedList.setSelectedList( index );
         	return $scope.lists[index].tasks;
         };
-
-		$scope.getSelectedList = function() {
-			return SelectedList.getSelectedList(); 
-		};
 
         // Creates a new task for a specific list
         $scope.createTask = function(index) {
@@ -93,11 +126,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         	$scope.findTasks(SelectedList.getSelectedList());
         };
 
-			// LEARN MORE
-   	//      function getSelectedList() {
-			// return SelectedList.getSelectedList();
-    //      };
-    //      $scope.getSelectedList = getSelectedList;
 
         // CRUD
 
