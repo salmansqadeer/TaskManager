@@ -102,6 +102,10 @@
 .unsigned-home .features {
   padding: 0 100px 0 100px; }
 
+.activeTask {
+  color: #40A3F5;
+  background-color: #F9F9F9; }
+
 .footer {
   height: 60px;
   background-color: #F9F9F9;

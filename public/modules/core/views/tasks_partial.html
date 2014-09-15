@@ -42,13 +42,10 @@
 <!-- TASK DETAILS -->
 
 
-<div class="tasks" ng-init = "showNewTaskForm = false ">
+<div class="tasks">
 
 <div add-task>Come Inside!</div>
 
-		<div class="btn btn-default" ng-click="showNewTaskForm = ! showNewTaskForm">
-			New Task
-		</div>
 
         <!-- Table -->
         <table class="table table-hover">
@@ -70,7 +67,7 @@
 			<tbody>
 
             	<!-- Add New Task to this Todo list-->
-				<tr ng-show = "showNewTaskForm">
+				<tr data-ng-controller="ListsController" ng-show = "getTaskFormStatus()">
                     <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
                             <div class="form-group">
                    
@@ -105,32 +102,34 @@
 
                 <!-- LIST ALL TASKS -->
 
-                <tr class="vert-align" data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status}">
-                    <td>
-                    	<input id="{{$index}}" type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
+                <tr class="vert-align" data-ng-repeat="task in lists[ getSelectedList() ].tasks" ng-class="{completedTask: task.status , activeTask: getSelectedTask() == $index}" >
 
-                    	<!-- This label holds the custom checkbox styled via css -->
-						<label for="{{$index}}"></label>
+                        <td>
+                            <input id="{{$index}}" type="checkbox" data-ng-bind="task.status" ng-checked="task.status" ng-click="toggleStatus(task)" >
 
-                    </td>
-                    <td>
-                    	{{task.name}}
-                    </td>
-                    <td>
-        				<span data-ng-bind="task.startDate | date:'mediumDate'"></span>
-                    </td>
-                    <td>
-						<span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
-                    </td>
-                    
-                    <td>
-                    	<!-- Delete a task -->
-	                    <div class="pull-right delete">
-	                        <a ng-click="removeTask($index)">
-	                            <i class="glyphicon glyphicon-trash"></i>
-	                        </a>
-	                    </div>
-                    </td>
+                            <!-- This label holds the custom checkbox styled via css -->
+                            <label for="{{$index}}"></label>
+
+                        </td>
+                        <td>
+                            {{task.name}}
+                        </td>
+                        <td>
+                            <span data-ng-bind="task.startDate | date:'mediumDate'"></span>
+                        </td>
+                        <td>
+                            <span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
+                        </td>
+                        
+                        <td>
+                            <!-- Delete a task -->
+                            <div class="pull-right delete">
+                                <a ng-click="removeTask($index)">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+
                 </tr>
 				
             </tbody>
