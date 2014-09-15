@@ -1,13 +1,19 @@
 <!-- IF USER IS NOT LOGGED IN, SHOW HOMEPAGE -->
 
 <!-- TODO:  Is this the right way to do this? -->
-<!-- <section data-ng-show="!authentication.user">
-	<div ng-include=" '/modules/core/views/unsigned_home.html' "></div>
-</section>
- -->
+	<section data-ng-controller="ListsController" ng-hide="authentication.user">
+		<div ng-include=" '/modules/core/views/header.client.view.html' "></div>
+		<div ng-include=" '/modules/core/views/unsigned_home.html' "></div>
+	
+		<div ng-include=" '/modules/core/views/unsigned_footer.html' "></div>
+
+	</section>
+	
+
+
 
 <!-- IF USER IS LOGGED IN, SHOW APPLICATION MAINPAGE -->
-<section data-ng-controller="ListsController" data-ng-init="find()" data-ng-show="authentication.user">
+<section data-ng-controller="ListsController" data-ng-init="find()" ng-hide="!authentication.user">
 
 	<!-- TOPBAR -->
 	<!-- <div ng-include=" '/modules/core/views/topbar_partial.html' "></div> -->

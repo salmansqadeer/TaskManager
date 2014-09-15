@@ -5,6 +5,10 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, hotkeys ) {
 		$scope.authentication = Authentication;
 
+        // MY FUNCTIONS
+
+        // HOTKEYS
+
 		hotkeys.add({
 		    combo: 'command+up',
 		    description: 'Go Up One List',
@@ -20,8 +24,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		    	SelectedList.goDownOneList($scope.lists);
 		    }
 		  });
-
-        // MY FUNCTIONS
 
         // Toggle Status
         // TODO - should all Task related functions be put into their own service?

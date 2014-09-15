@@ -87,6 +87,36 @@
       content: "\f046";
       letter-spacing: 5px; }
 
+.unsigned-home .jumbotron {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; }
+.unsigned-home .headline {
+  color: white;
+  text-shadow: 0 0 8px #212121;
+  font-size: 3.8em;
+  font-weight: 900;
+  letter-spacing: -3px;
+  padding: 60px 0 40px 0; }
+.unsigned-home .features {
+  padding: 0 100px 0 100px; }
+
+.footer {
+  height: 60px;
+  background-color: #F9F9F9;
+  padding-top: 20px; }
+  .footer p {
+    float: right;
+    padding-right: 30px; }
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px; } }
 .content {
   margin: 0 0 0 0; }
 

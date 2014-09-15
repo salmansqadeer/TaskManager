@@ -31,7 +31,7 @@ angular.module('lists').factory('SelectedList', [
 
 			goDownOneList: function(index) {
 
-				if (selectedList < index.length) {
+				if (selectedList < index.length - 1) {
 					selectedList = selectedList + 1;
 				}
 				return selectedList;

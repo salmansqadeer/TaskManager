@@ -1,0 +1,25 @@
+
+.unsigned-home {
+
+	.jumbotron {
+		background-image: url('../images/background.jpg');
+		background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-position: center; 
+	}
+
+	.headline {
+		color: white;
+		text-shadow: 0 0 8px $darkGrey;
+		font-size: 3.8em;
+		font-weight: 900;
+		letter-spacing: -3px;
+		padding: 60px 0 40px 0;
+
+	}
+
+	.features {
+		padding: 0 100px 0 100px
+	}
+
+}
