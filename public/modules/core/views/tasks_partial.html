@@ -2,6 +2,7 @@
 <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">        
 
     <!-- Signup Link if User is not signed in -->
+    <!-- TODO:  This should be removed as the user can never be on this page in this state right? -->
 
     <ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
         <li ui-route="/signup" ng-class="{active: $uiRoute}">
@@ -43,9 +44,6 @@
 
 
 <div class="tasks">
-
-<!-- <div add-task>Come Inside!</div> -->
-
 
         <!-- Table -->
         <table class="table table-hover">

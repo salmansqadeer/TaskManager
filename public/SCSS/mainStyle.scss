@@ -11,6 +11,7 @@ $activeBlue: #40A3F5;
 @import 'signed_in_header';
 @import 'tasks';
 @import 'unsigned_home';
+@import 'signup';
 
 
 .activeTask {
@@ -18,7 +19,10 @@ $activeBlue: #40A3F5;
 	background-color: $lightGrey;
 }
 
-
+// Fix to stop CSS elements overflowing
+input {
+        max-width: 100%;
+} 
 
 .footer {
 	height: 60px;

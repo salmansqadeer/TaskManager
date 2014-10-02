@@ -13,11 +13,20 @@ module.exports = {
 	assets: {
 		lib: {
 			css: [
-				'public/lib/bootstrap/dist/css/bootstrap.css',
-				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				// Boostrap
+				// 'public/lib/bootstrap/dist/css/bootstrap.css',
+				// 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				
+				// Flatstrap
+				'public/lib/flatstrap3/dist/css/bootstrap.css',
+				'public/lib/flatstrap3/dist/css/bootstrap-theme.css',
+				
+				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.css'
 			],
 			js: [
+
+				// Angular
 				'public/lib/angular/angular.js',
 				'public/lib/angular-resource/angular-resource.js', 
 				'public/lib/angular-cookies/angular-cookies.js', 
@@ -26,7 +35,18 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js', 
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
+				
+				// Bootstrap
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+				
+				// JQUERY
+				'public/lib/jquery/dist/jquery.js',
+
+				// Flatstrap
+				'public/lib/flatstrap3/dist/js/bootstrap.js',
+				// 'public/angular-flatstrap/build/angular-flatstrap.js',
+				
+				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.js'
 			]
 		},

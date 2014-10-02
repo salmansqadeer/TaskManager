@@ -5,9 +5,14 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, SelectedTask, hotkeys ) {
 		$scope.authentication = Authentication;
 
+		console.log('User Details:');
+		console.log(user);		
+
         // MY FUNCTIONS
 
+		// **************
         // HOTKEYS
+        // **************
 
        	hotkeys.add({
 		    combo: 'command+up',
@@ -58,8 +63,9 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		    }
 		  });
 
-
+		// **************
 		// Service Getters
+		// **************
 
 		$scope.getSelectedTask = function() {
 			return SelectedTask.getSelectedTask(); 
@@ -73,7 +79,10 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 			return SelectedTask.getTaskFormStatus();
 		};
 
-        // Toggle Status
+        // **************
+        // Toggle Task Status
+        // **************
+
         // TODO - should all Task related functions be put into their own service?
 		$scope.toggleStatus = function ( task ) {
 			if ( task ) {
@@ -138,7 +147,9 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         };
 
 
-        // CRUD
+        // **************
+        // List CRUD
+		// **************
 
 		// Create new List
 		$scope.create = function() {
@@ -152,8 +163,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
             console.log(list);
 
 			list.$save(function(response) {
-				// Redirect after save
-				// $location.path('lists/' + response._id);
 
 				// Clear form fields
 				$scope.name = '';

@@ -98,9 +98,23 @@
 .unsigned-home .features {
   padding: 0 100px 0 100px; }
 
+.signup {
+  margin-top: 100px; }
+  .signup .form-group {
+    margin: 15px 0 0 0; }
+  .signup .social-sign img {
+    width: 24%; }
+
+.forgot-password {
+  margin-top: 10px;
+  text-align: center; }
+
 .activeTask {
   color: #40A3F5;
   background-color: #F9F9F9; }
+
+input {
+  max-width: 100%; }
 
 .footer {
   height: 60px;
