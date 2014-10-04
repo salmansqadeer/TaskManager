@@ -8,7 +8,7 @@ angular.module('lists').factory('SelectedTask', [
 		
 		var selectedTask = 0;
 
-		var showNewTaskForm = null;
+		var taskFormVisibility = null;
 
 		// Public API
 		return {
@@ -35,21 +35,23 @@ angular.module('lists').factory('SelectedTask', [
 				return selectedTask;
 			},
 
-			getTaskFormStatus: function() {
-				return showNewTaskForm;
+			// Stores whether the New Task form is visible or not
+			getTaskFormVisibility: function() {
+				return taskFormVisibility;
 			},
 
+			// Toggles showing / hiding the new task form
 			toggleTaskForm: function() {
-				if (showNewTaskForm === null) {
+				if (taskFormVisibility === null) {
 					console.log('Show New Task Form');
-					console.log (showNewTaskForm);
-					showNewTaskForm = 1;
+					console.log (taskFormVisibility);
+					taskFormVisibility = 1;
 
 				}
 				else {
 					console.log('Hide New Task Form');
-					console.log (showNewTaskForm);
-					showNewTaskForm = null;
+					console.log (taskFormVisibility);
+					taskFormVisibility = null;
 				}
 			}
 

@@ -75,8 +75,8 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 			return SelectedList.getSelectedList(); 
 		};
 
-		$scope.getTaskFormStatus = function() {
-			return SelectedTask.getTaskFormStatus();
+		$scope.getTaskFormVisibility = function() {
+			return SelectedTask.getTaskFormVisibility();
 		};
 
         // **************
