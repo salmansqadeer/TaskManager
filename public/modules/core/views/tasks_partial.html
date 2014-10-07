@@ -1,21 +1,7 @@
 <!-- SIGNED IN NAVBAR -->
 <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">        
 
-    <!-- Signup Link if User is not signed in -->
-    <!-- TODO:  This should be removed as the user can never be on this page in this state right? -->
-
-    <ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
-        <li ui-route="/signup" ng-class="{active: $uiRoute}">
-            <a href="/#!/signup">Sign Up</a>
-        </li>
-        <li class="divider-vertical"></li>
-        <li ui-route="/signin" ng-class="{active: $uiRoute}">
-            <a href="/#!/signin">Sign In</a>
-        </li>
-    </ul>
-
-
-    <!-- Drop Down Menu -->
+    <!-- Drop Down Menu with Signed in Options -->
     <ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -38,6 +24,7 @@
             </ul>
         </li>
     </ul>
+    
 </nav>
 
 <!-- TASK DETAILS -->

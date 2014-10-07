@@ -16,11 +16,11 @@ module.exports = {
 				// Boostrap
 				// 'public/lib/bootstrap/dist/css/bootstrap.css',
 				// 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-				
+
 				// Flatstrap
 				'public/lib/flatstrap3/dist/css/bootstrap.css',
 				'public/lib/flatstrap3/dist/css/bootstrap-theme.css',
-				
+
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.css'
 			],
@@ -28,24 +28,24 @@ module.exports = {
 
 				// Angular
 				'public/lib/angular/angular.js',
-				'public/lib/angular-resource/angular-resource.js', 
-				'public/lib/angular-cookies/angular-cookies.js', 
-				'public/lib/angular-animate/angular-animate.js', 
-				'public/lib/angular-touch/angular-touch.js', 
-				'public/lib/angular-sanitize/angular-sanitize.js', 
+				'public/lib/angular-resource/angular-resource.js',
+				'public/lib/angular-cookies/angular-cookies.js',
+				'public/lib/angular-animate/angular-animate.js',
+				'public/lib/angular-touch/angular-touch.js',
+				'public/lib/angular-sanitize/angular-sanitize.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				
+
 				// Bootstrap
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				
+
 				// JQUERY
 				'public/lib/jquery/dist/jquery.js',
 
 				// Flatstrap
 				'public/lib/flatstrap3/dist/js/bootstrap.js',
 				// 'public/angular-flatstrap/build/angular-flatstrap.js',
-				
+
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.js'
 			]

@@ -1,13 +1,16 @@
 'use strict';
 
-// Tasks service used to communicate the task index that is currently selected.
+// Tasks service encapsulating Tasks related functionality 
 
 angular.module('lists').factory('SelectedTask', [
 	function() {
-		// SelectedTask service logic
 		
+		// selectedTask represents the index of the currently selected task
+		// All actions will happen on this task
 		var selectedTask = 0;
 
+		// taskFormVisibility stores whether the new task form is visible or not
+		
 		var taskFormVisibility = null;
 
 		// Public API
@@ -23,7 +26,7 @@ angular.module('lists').factory('SelectedTask', [
 
 			goUpOneTask: function() {
 				if (selectedTask > 0) {
-					selectedTask = selectedTask - 1;	
+					selectedTask = selectedTask - 1;
 				}
 				return selectedTask;
 			},
