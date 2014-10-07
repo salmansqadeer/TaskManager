@@ -1,12 +1,9 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'SelectedTask','hotkeys', 
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'SelectedTask','hotkeys',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, SelectedTask, hotkeys ) {
 		$scope.authentication = Authentication;
-
-		console.log('User Details:');
-		console.log(user);		
 
         // MY FUNCTIONS
 
@@ -32,7 +29,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'up',
-		    description: 'Go Up One Task',		    
+		    description: 'Go Up One Task',
 		    callback: function() {
 		    	SelectedTask.goUpOneTask($scope.lists[ SelectedList.getSelectedList() ]);
 		    }
@@ -40,7 +37,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'down',
-		    description: 'Go Down One Task',		    
+		    description: 'Go Down One Task',
 		    callback: function() {
 		    	SelectedTask.goDownOneTask($scope.lists[ SelectedList.getSelectedList() ]);
 		    }
@@ -48,7 +45,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'space',
-		    description: 'Mark task as completed',		    
+		    description: 'Mark task as completed',
 		    callback: function() {
 				$scope.toggleStatus($scope.lists[ SelectedList.getSelectedList() ].tasks[ SelectedTask.getSelectedTask() ] );
 		    }
@@ -57,7 +54,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'enter',
-		    description: 'Add New Task',		    
+		    description: 'Add New Task',
 		    callback: function() {
 				SelectedTask.toggleTaskForm();
 		    }
@@ -68,11 +65,11 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 		// **************
 
 		$scope.getSelectedTask = function() {
-			return SelectedTask.getSelectedTask(); 
+			return SelectedTask.getSelectedTask();
 		};
 
 		$scope.getSelectedList = function() {
-			return SelectedList.getSelectedList(); 
+			return SelectedList.getSelectedList();
 		};
 
 		$scope.getTaskFormVisibility = function() {
@@ -208,7 +205,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		// Find existing List
 		$scope.findOne = function() {
-			$scope.list = Lists.get({ 
+			$scope.list = Lists.get({
 				listId: $stateParams.listId
 			});
 		};

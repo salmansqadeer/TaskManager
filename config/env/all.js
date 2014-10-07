@@ -31,10 +31,6 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
 
-				// Flatstrap
-				// 'public/lib/flatstrap3/dist/css/bootstrap.css',
-				// 'public/lib/flatstrap3/dist/css/bootstrap-theme.css',
-
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.css'
 			],
@@ -55,10 +51,6 @@ module.exports = {
 
 				// JQUERY
 				'public/lib/jquery/dist/jquery.js',
-
-				// Flatstrap
-				'public/lib/flatstrap3/dist/js/bootstrap.js',
-				// 'public/angular-flatstrap/build/angular-flatstrap.js',
 
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.js'

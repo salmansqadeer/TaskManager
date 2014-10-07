@@ -16,11 +16,6 @@ $activeBlue: #40A3F5;
 @import 'signup';
 
 
-.activeTask {
-	color: $activeBlue;
-	background-color: $lightGrey;
-}
-
 // Fix to stop CSS elements overflowing
 input {
         max-width: 100%;

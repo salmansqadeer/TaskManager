@@ -7,25 +7,30 @@
 
 .tasks {
 
-	.list_name_display {
-		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	.list-name-display {
+		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	   	font-weight: 100;
 	   	font-size: 48px;
 	   	margin-bottom: -10px;
 	}
-
 
 	.completedTask {
 		background-color: #F2F2F2;
 		color: #999;
 	}
 
+	// Highlights the active task in Blue (note that this must be after completedTask)
+	.activeTask {
+		color: $activeBlue;
+		background-color: $lightGrey;
+	}
+
 	tr .delete {
-		display: none;	
+		display: none;
 	}
 
 	tr:hover .delete {
-		display: inline;	
+		display: inline;
 	}
 
 
@@ -36,11 +41,11 @@
 	}
 
 	input[type=checkbox] {
-		display: none; /* to hide the checkbox itself */		
+		display: none; /* to hide the checkbox itself */
 
 	  	+ label:before {
 	  		/* unchecked icon */
-			
+
 		    font-family: FontAwesome;
 		    font-size: 24px;
 		    display: inline-block;

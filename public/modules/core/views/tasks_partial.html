@@ -1,5 +1,5 @@
 <!-- SIGNED IN NAVBAR -->
-<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">        
+<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 
     <!-- Drop Down Menu with Signed in Options -->
     <ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
@@ -24,7 +24,7 @@
             </ul>
         </li>
     </ul>
-    
+
 </nav>
 
 <!-- TASK DETAILS -->
@@ -39,7 +39,7 @@
                     <th class='col-md-1' ></th>
                     <th class='col-md-8' >
 
-                    	<div class="list_name_display">
+                    	<div class="list-name-display">
 							{{lists[ getSelectedList() ].name}}
                     	</div>
 
@@ -53,9 +53,9 @@
 
             	<!-- Add New Task to this Todo list-->
 				<tr ng-show = "getTaskFormVisibility()">
-                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>	                        
+                    <form name="newTaskForm" id="newTaskForm" ng-submit="createTask( getSelectedList() )" novalidate>
                             <div class="form-group">
-                   
+
 	                                <!--Checkbox (empty)-->
 	                                <td class='col-md-1'></td>
 
@@ -66,7 +66,7 @@
 	                                <td class='col-md-1'>
 	                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
 	                                </td>
-	                                
+
 	                                <td class='col-md-1'>
 	                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
 	                                </td>
@@ -81,7 +81,7 @@
                             <div data-ng-show="error" class="text-danger">
                                 <strong data-ng-bind="error"></strong>
                             </div>
-                        
+
                     </form>
                 </tr>
 
@@ -105,7 +105,7 @@
                         <td>
                             <span data-ng-bind="task.dueDate | date:'mediumDate'"></span>
                         </td>
-                        
+
                         <td>
                             <!-- Delete a task -->
                             <div class="pull-right delete">
@@ -116,7 +116,7 @@
                         </td>
 
                 </tr>
-				
+
             </tbody>
         </table>
 
