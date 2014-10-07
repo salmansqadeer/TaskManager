@@ -8,17 +8,17 @@
 .left_sidebar {
 
 	color: $mediumGrey;
-	font-weight:bold;
+	font-weight: bold;
 	// letter-spacing:-1pt;
-	word-spacing:2pt;
-	font-family:helvetica, sans-serif;line-height:1;
+	word-spacing: 2pt;
+	font-family: helvetica, sans-serif;line-height:1;
 
 	.search_bar {
 		margin: 40px 0 0 0;
 	}
 
 	.form-control {
-		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	   	font-weight: 100;
 	}
 
@@ -41,9 +41,9 @@
 	}
 
 	.sidebar-table {
-		
+
 		table {
-			
+
 			width: 100%;
 			margin: 25px 0 0 0;
 
@@ -52,8 +52,8 @@
 			}
 
 			// When you hover on a row, highlight td
-			tr:hover td {				
-				background-color: $grey;				
+			tr:hover td {
+				background-color: $grey;
 			}
 
 			th {
@@ -90,7 +90,7 @@
 			}
 
 			input[type=text] {
-				width: 80%;				
+				width: 80%;
 			}
 
 			.btn {
@@ -101,5 +101,3 @@
 
 
 }
-
-

@@ -11,15 +11,29 @@ module.exports = {
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',
 	assets: {
+		css: [
+			'public/modules/**/css/*.css'
+		],
+		js: [
+			'public/config.js',
+			'public/application.js',
+			'public/modules/*/*.js',
+			'public/modules/*/*[!tests]*/*.js'
+		],
+		tests: [
+			'public/lib/angular-mocks/angular-mocks.js',
+			'public/modules/*/tests/*.js'
+		],
+
 		lib: {
 			css: [
 				// Boostrap
-				// 'public/lib/bootstrap/dist/css/bootstrap.css',
-				// 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/bootstrap/dist/css/bootstrap.css',
+				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
 
 				// Flatstrap
-				'public/lib/flatstrap3/dist/css/bootstrap.css',
-				'public/lib/flatstrap3/dist/css/bootstrap-theme.css',
+				// 'public/lib/flatstrap3/dist/css/bootstrap.css',
+				// 'public/lib/flatstrap3/dist/css/bootstrap-theme.css',
 
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.css'
@@ -49,19 +63,7 @@ module.exports = {
 				// Angular-Hotkeys
 				'public/lib/angular-hotkeys/build/hotkeys.min.js'
 			]
-		},
-		css: [
-			'public/modules/**/css/*.css'
-		],
-		js: [
-			'public/config.js',
-			'public/application.js',
-			'public/modules/*/*.js',
-			'public/modules/*/*[!tests]*/*.js'
-		],
-		tests: [
-			'public/lib/angular-mocks/angular-mocks.js',
-			'public/modules/*/tests/*.js'
-		]
+		}
+
 	}
 };

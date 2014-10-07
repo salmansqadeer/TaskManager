@@ -1,4 +1,5 @@
 
+$white: #FFFFFF;
 $ultraLightGrey: #FAFAFA;
 $lightGrey: #F9F9F9;
 $grey: #d1d1d1;
@@ -7,6 +8,7 @@ $darkGrey: #212121;
 
 $activeBlue: #40A3F5;
 
+@import 'bootstrap_flat';
 @import 'left_sidebar';
 @import 'signed_in_header';
 @import 'tasks';
@@ -22,7 +24,7 @@ $activeBlue: #40A3F5;
 // Fix to stop CSS elements overflowing
 input {
         max-width: 100%;
-} 
+}
 
 .footer {
 	height: 60px;
