@@ -6,7 +6,7 @@
 <!-- TODO:  Is this the right way to do this? -->
 	<section ng-hide="authentication.user">
 		<div ng-include=" '/modules/core/views/header.client.view.html' "></div>
-		<div ng-include=" '/modules/core/views/unsigned_home.html' "></div>	
+		<div ng-include=" '/modules/core/views/unsigned_home.html' "></div>
 		<div ng-include=" '/modules/core/views/unsigned_footer.html' "></div>
 	</section>
 
@@ -15,18 +15,16 @@
 
 		    <div class="row">
 
-		    	<!-- LEFT SIDEBAR (Lists) -->
-		    	<div class="col-md-2">
-					<div ng-include=" '/modules/core/views/left_sidebar_partial.html' "></div>
-				</div>
+		    	<!-- LEFT SIDEBAR (Lists) -->	
+				<div ng-include=" '/modules/core/views/left_sidebar_partial.html' "></div>
+
 
 				<!-- MAIN WINDOW (Tasks) -->
 				<div class="col-md-10">
-					<div ng-include=" '/modules/core/views/tasks_partial.html' "></div>			
+					<div ng-include=" '/modules/core/views/tasks_partial.html' "></div>
 				</div>
 
 		    </div>
 
 	</section>
 </section>
-

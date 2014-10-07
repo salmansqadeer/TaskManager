@@ -1,11 +1,12 @@
 /* LIST SIDEBAR STYLES */
 
-.col-md-2 {
-	border-right: 1px solid $grey;
-	height: 100%;
-}
-
 .left_sidebar {
+
+	.col-md-2 {
+		border-right: 1px solid $grey;
+		height: 100%;
+	}
+
 
 	color: $mediumGrey;
 	font-weight: bold;

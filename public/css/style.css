@@ -6,25 +6,19 @@
   color: #FFFFFF;
   background-color: #e74c3c; }
 
-.btn-default {
-  background-color: #e74c3c;
-  border-radius: none; }
-
-.btn-lg {
-  background-color: #e74c3c;
-  border-radius: none; }
+.form-control {
+  border-radius: 0px; }
 
 /* LIST SIDEBAR STYLES */
-.col-md-2 {
-  border-right: 1px solid #d1d1d1;
-  height: 100%; }
-
 .left_sidebar {
   color: #5E5E5E;
   font-weight: bold;
   word-spacing: 2pt;
   font-family: helvetica, sans-serif;
   line-height: 1; }
+  .left_sidebar .col-md-2 {
+    border-right: 1px solid #d1d1d1;
+    height: 100%; }
   .left_sidebar .search_bar {
     margin: 40px 0 0 0; }
   .left_sidebar .form-control {
