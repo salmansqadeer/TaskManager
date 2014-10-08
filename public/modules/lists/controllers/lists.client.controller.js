@@ -1,13 +1,15 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'SelectedTask','hotkeys', 
+angular.module('lists').controller('ListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Lists', 'SelectedList', 'SelectedTask','hotkeys',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, SelectedTask, hotkeys ) {
 		$scope.authentication = Authentication;
 
         // MY FUNCTIONS
 
+		// **************
         // HOTKEYS
+        // **************
 
        	hotkeys.add({
 		    combo: 'command+up',
@@ -27,7 +29,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'up',
-		    description: 'Go Up One Task',		    
+		    description: 'Go Up One Task',
 		    callback: function() {
 		    	SelectedTask.goUpOneTask($scope.lists[ SelectedList.getSelectedList() ]);
 		    }
@@ -35,7 +37,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'down',
-		    description: 'Go Down One Task',		    
+		    description: 'Go Down One Task',
 		    callback: function() {
 		    	SelectedTask.goDownOneTask($scope.lists[ SelectedList.getSelectedList() ]);
 		    }
@@ -43,7 +45,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'space',
-		    description: 'Mark task as completed',		    
+		    description: 'Mark task as completed',
 		    callback: function() {
 				$scope.toggleStatus($scope.lists[ SelectedList.getSelectedList() ].tasks[ SelectedTask.getSelectedTask() ] );
 		    }
@@ -52,28 +54,32 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		hotkeys.add({
 		    combo: 'enter',
-		    description: 'Add New Task',		    
+		    description: 'Add New Task',
 		    callback: function() {
 				SelectedTask.toggleTaskForm();
 		    }
 		  });
 
-
+		// **************
 		// Service Getters
+		// **************
 
 		$scope.getSelectedTask = function() {
-			return SelectedTask.getSelectedTask(); 
+			return SelectedTask.getSelectedTask();
 		};
 
 		$scope.getSelectedList = function() {
-			return SelectedList.getSelectedList(); 
+			return SelectedList.getSelectedList();
 		};
 
-		$scope.getTaskFormStatus = function() {
-			return SelectedTask.getTaskFormStatus();
+		$scope.getTaskFormVisibility = function() {
+			return SelectedTask.getTaskFormVisibility();
 		};
 
-        // Toggle Status
+        // **************
+        // Toggle Task Status
+        // **************
+
         // TODO - should all Task related functions be put into their own service?
 		$scope.toggleStatus = function ( task ) {
 			if ( task ) {
@@ -138,7 +144,9 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
         };
 
 
-        // CRUD
+        // **************
+        // List CRUD
+		// **************
 
 		// Create new List
 		$scope.create = function() {
@@ -152,8 +160,6 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
             console.log(list);
 
 			list.$save(function(response) {
-				// Redirect after save
-				// $location.path('lists/' + response._id);
 
 				// Clear form fields
 				$scope.name = '';
@@ -199,7 +205,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		// Find existing List
 		$scope.findOne = function() {
-			$scope.list = Lists.get({ 
+			$scope.list = Lists.get({
 				listId: $stateParams.listId
 			});
 		};

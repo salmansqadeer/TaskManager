@@ -71,8 +71,10 @@ exports.delete = function(req, res) {
 
 /**
  * List of Lists
+ * List of Lists is filtered by the currently logged in user (sent in the request object)
  */
-exports.list = function(req, res) { List.find().sort('-created').populate('user', 'displayName').exec(function(err, lists) {
+exports.list = function(req, res) { List.find( {user : req.user.id } ).sort('-created').populate('user', 'displayName').exec(function(err, lists) {
+
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

@@ -1,14 +1,17 @@
 'use strict';
 
-// Tasks service used to communicate the task index that is currently selected.
+// Tasks service encapsulating Tasks related functionality 
 
 angular.module('lists').factory('SelectedTask', [
 	function() {
-		// SelectedTask service logic
 		
+		// selectedTask represents the index of the currently selected task
+		// All actions will happen on this task
 		var selectedTask = 0;
 
-		var showNewTaskForm = null;
+		// taskFormVisibility stores whether the new task form is visible or not
+		
+		var taskFormVisibility = null;
 
 		// Public API
 		return {
@@ -23,7 +26,7 @@ angular.module('lists').factory('SelectedTask', [
 
 			goUpOneTask: function() {
 				if (selectedTask > 0) {
-					selectedTask = selectedTask - 1;	
+					selectedTask = selectedTask - 1;
 				}
 				return selectedTask;
 			},
@@ -35,21 +38,23 @@ angular.module('lists').factory('SelectedTask', [
 				return selectedTask;
 			},
 
-			getTaskFormStatus: function() {
-				return showNewTaskForm;
+			// Stores whether the New Task form is visible or not
+			getTaskFormVisibility: function() {
+				return taskFormVisibility;
 			},
 
+			// Toggles showing / hiding the new task form
 			toggleTaskForm: function() {
-				if (showNewTaskForm === null) {
+				if (taskFormVisibility === null) {
 					console.log('Show New Task Form');
-					console.log (showNewTaskForm);
-					showNewTaskForm = 1;
+					console.log (taskFormVisibility);
+					taskFormVisibility = 1;
 
 				}
 				else {
 					console.log('Hide New Task Form');
-					console.log (showNewTaskForm);
-					showNewTaskForm = null;
+					console.log (taskFormVisibility);
+					taskFormVisibility = null;
 				}
 			}
 

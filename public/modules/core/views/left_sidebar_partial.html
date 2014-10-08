@@ -1,64 +1,71 @@
+
 <!-- LIST DETAILS -->
 <div class="left_sidebar">
 
-	<div class="search_bar">
-		<input type="text" id="searchBar" class="form-control" placeholder="Search">
-	</div>
-    
+	<div class="col-md-2">
 
-	<div class="lists">
-
-		<div class="table table-hover sidebar-table">
-			<table>
-				<thead>
-					<tr>
-						<th>
-							Lists
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr data-ng-repeat = "list in lists" ng-click="findTasks($index)" ng-class="{activeList: getSelectedList() == $index}">
-						<td>
-							<!-- Each List Item -->
-							{{list.name}}
-
-							<div class="delete-list">
-								<i class="fa fa-minus-circle" ng-click="remove(list)"></i>
-							</div>
-
-						</td>
-					</tr>
-
-					<tr ng-hide="showNewToDoForm">
-						
-				    	<!-- ADD NEW LIST FORM -->
-						<form name="newListForm" id="newListForm" class="newListForm" ng-submit="create()" novalidate>
-				            <formgroup>
-				                <td>
-				                    <input 
-				                    	type="text" 
-				                    	data-ng-model="listName" 
-				                    	id="listName" 
-				                    	class="form-control" 
-				                    	ng-keyup="$event.keyCode == 13 && create()" 
-				                    	placeholder="New List" 
-				                    	required
-			                    	>
-
-				                </td>
-				        	</formgroup>
-				        </form>
-					</tr>
-
-				</tbody>
-			</table>		
+		<div class="search_bar">
+			<input type="text" id="searchBar" class="form-control" placeholder="Search">
 		</div>
 
-		<!--SHOW ADD NEW LIST BUTTON -->
-        
-        <i class="fa fa-plus-circle fa-2x add-new-sidebar-item" style=" text-align: middle;" ng-click="showNewToDoForm = ! showNewToDoForm"></i>
-        
-    </div>
+
+		<div class="lists">
+
+			<div class="table table-hover sidebar-table">
+				<table>
+					<thead>
+						<tr>
+							<th>
+								Lists
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat = "list in lists" ng-click="findTasks($index)" ng-class="{activeList: getSelectedList() == $index}">
+							<td>
+								<!-- Each List Item -->
+								{{list.name}}
+
+								<div class="delete-list">
+									<i class="fa fa-minus-circle" ng-click="remove(list)"></i>
+								</div>
+
+							</td>
+						</tr>
+
+						<tr ng-hide="showNewToDoForm">
+
+					    	<!-- ADD NEW LIST FORM -->
+							<form name="newListForm" id="newListForm" class="newListForm" ng-submit="create()" novalidate>
+					            <formgroup>
+					                <td>
+					                    <input
+					                    	type="text"
+					                    	data-ng-model="listName"
+					                    	id="listName"
+					                    	class="form-control"
+					                    	ng-keyup="$event.keyCode == 13 && create()"
+					                    	placeholder="New List"
+					                    	required
+				                    	>
+
+					                </td>
+					        	</formgroup>
+					        </form>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<!--SHOW ADD NEW LIST BUTTON -->
+
+	        <i class="fa fa-plus-circle fa-2x add-new-sidebar-item" style=" text-align: middle;" ng-click="showNewToDoForm = ! showNewToDoForm"></i>
+
+	    </div>
+
+	</div>
 
 </div>

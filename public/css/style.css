@@ -1,14 +1,24 @@
-/* LIST SIDEBAR STYLES */
-.col-md-2 {
-  border-right: 1px solid #d1d1d1;
-  height: 100%; }
+.btn {
+  background-color: #e74c3c;
+  border-radius: 0px; }
 
+.btn-important {
+  color: #FFFFFF;
+  background-color: #e74c3c; }
+
+.form-control {
+  border-radius: 0px; }
+
+/* LIST SIDEBAR STYLES */
 .left_sidebar {
   color: #5E5E5E;
   font-weight: bold;
   word-spacing: 2pt;
   font-family: helvetica, sans-serif;
   line-height: 1; }
+  .left_sidebar .col-md-2 {
+    border-right: 1px solid #d1d1d1;
+    height: 100%; }
   .left_sidebar .search_bar {
     margin: 40px 0 0 0; }
   .left_sidebar .form-control {
@@ -30,7 +40,7 @@
     .left_sidebar .sidebar-table table thead {
       text-transform: uppercase; }
     .left_sidebar .sidebar-table table tr:hover td {
-      background-color: #d1d1d1; }
+      background-color: #F5F5F5; }
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }
     .left_sidebar .sidebar-table table td {
@@ -40,7 +50,7 @@
         text-decoration: none; }
     .left_sidebar .sidebar-table table .activeList {
       color: #40A3F5;
-      background-color: #F9F9F9; }
+      background-color: #F5F5F5; }
   .left_sidebar .lists .form-control {
     margin-bottom: 10px; }
   .left_sidebar .lists .newListForm td {
@@ -56,7 +66,7 @@
 /*TASK STYLES */
 .tasks {
   /*** custom checkboxes ***/ }
-  .tasks .list_name_display {
+  .tasks .list-name-display {
     font-family: "'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 100;
     font-size: 48px;
@@ -64,6 +74,9 @@
   .tasks .completedTask {
     background-color: #F2F2F2;
     color: #999; }
+  .tasks .activeTask {
+    color: #40A3F5;
+    background-color: #F5F5F5; }
   .tasks tr .delete {
     display: none; }
   .tasks tr:hover .delete {
@@ -98,13 +111,26 @@
 .unsigned-home .features {
   padding: 0 100px 0 100px; }
 
-.activeTask {
-  color: #40A3F5;
-  background-color: #F9F9F9; }
+.signup {
+  margin-top: 100px; }
+  .signup .form-group {
+    margin: 15px 0 0 0; }
+  .signup .social-sign img {
+    width: 24%; }
+
+.forgot-password {
+  margin-top: 10px;
+  text-align: center; }
+
+input {
+  max-width: 100%; }
+
+.navbar-nav.navbar-right:last-child {
+  margin-bottom: -40px; }
 
 .footer {
   height: 60px;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
   padding-top: 20px; }
   .footer p {
     float: right;
