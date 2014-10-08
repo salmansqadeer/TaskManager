@@ -1,7 +1,7 @@
 
 $white: #FFFFFF;
 $ultraLightGrey: #FAFAFA;
-$lightGrey: #F9F9F9;
+$lightGrey: #F5F5F5;
 $grey: #d1d1d1;
 $mediumGrey: #5E5E5E;
 $darkGrey: #212121;
@@ -20,6 +20,12 @@ $activeBlue: #40A3F5;
 input {
         max-width: 100%;
 }
+
+// SIGNED HEADER NAVBAR
+.navbar-nav.navbar-right:last-child {
+	margin-bottom: -40px;
+}
+
 
 .footer {
 	height: 60px;

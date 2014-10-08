@@ -40,7 +40,7 @@
     .left_sidebar .sidebar-table table thead {
       text-transform: uppercase; }
     .left_sidebar .sidebar-table table tr:hover td {
-      background-color: #d1d1d1; }
+      background-color: #F5F5F5; }
     .left_sidebar .sidebar-table table th {
       padding: 15px 0 15px 0; }
     .left_sidebar .sidebar-table table td {
@@ -50,7 +50,7 @@
         text-decoration: none; }
     .left_sidebar .sidebar-table table .activeList {
       color: #40A3F5;
-      background-color: #F9F9F9; }
+      background-color: #F5F5F5; }
   .left_sidebar .lists .form-control {
     margin-bottom: 10px; }
   .left_sidebar .lists .newListForm td {
@@ -64,9 +64,6 @@
   background-color: #FAFAFA; }
 
 /*TASK STYLES */
-.navbar-nav.navbar-right:last-child {
-  margin-bottom: -40px; }
-
 .tasks {
   /*** custom checkboxes ***/ }
   .tasks .list-name-display {
@@ -79,7 +76,7 @@
     color: #999; }
   .tasks .activeTask {
     color: #40A3F5;
-    background-color: #F9F9F9; }
+    background-color: #F5F5F5; }
   .tasks tr .delete {
     display: none; }
   .tasks tr:hover .delete {
@@ -128,9 +125,12 @@
 input {
   max-width: 100%; }
 
+.navbar-nav.navbar-right:last-child {
+  margin-bottom: -40px; }
+
 .footer {
   height: 60px;
-  background-color: #F9F9F9;
+  background-color: #F5F5F5;
   padding-top: 20px; }
   .footer p {
     float: right;
