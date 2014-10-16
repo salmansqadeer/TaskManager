@@ -5,6 +5,8 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Lists, SelectedList, SelectedTask, hotkeys ) {
 		$scope.authentication = Authentication;
 
+        $scope.curDate = '';
+
         // MY FUNCTIONS
 
 		// **************

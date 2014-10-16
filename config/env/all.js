@@ -3,7 +3,7 @@
 module.exports = {
 	app: {
 		title: 'TaskManager',
-		description: 'MEAN To Do List application for power users.',
+		description: 'To Do List application for power users.',
 		keywords: 'MongoDB, Express, AngularJS, NodeJS, ToDo, To Do List, Productivity App, '
 	},
 	port: process.env.PORT || 3000,
@@ -32,9 +32,17 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
 
 				// Angular-Hotkeys
-				'public/lib/angular-hotkeys/build/hotkeys.min.css'
+				'public/lib/angular-hotkeys/build/hotkeys.min.css',
+				
+				// Date Picker (pickadate)
+                'public/lib/pickadate/lib/themes/classic.css',
+                'public/lib/pickadate/themes/classic.date.css'
+                // 'public/lib/angular-pickadate/src/angular-pickadate.css'
 			],
 			js: [
+
+                // JQUERY
+                'public/lib/jquery/dist/jquery.js',
 
 				// Angular
 				'public/lib/angular/angular.js',
@@ -49,11 +57,13 @@ module.exports = {
 				// Bootstrap
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
 
-				// JQUERY
-				'public/lib/jquery/dist/jquery.js',
-
 				// Angular-Hotkeys
-				'public/lib/angular-hotkeys/build/hotkeys.min.js'
+				'public/lib/angular-hotkeys/build/hotkeys.min.js',
+				
+				// Date Picker (pickadate)
+                'public/lib/pickadate/lib/picker.js',
+                'public/lib/pickadate/lib/picker.date.js'
+                // 'public/lib/angular-pickadate/src/angular-pickadate.js'
 			]
 		}
 
