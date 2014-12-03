@@ -36,12 +36,15 @@ module.exports = {
 				
 				// Date Picker (pickadate)
                 'public/lib/pickadate/lib/themes/classic.css',
-                'public/lib/pickadate/themes/classic.date.css'
-                // 'public/lib/angular-pickadate/src/angular-pickadate.css'
+                'public/lib/pickadate/lib/themes/classic.date.css',
+                'public/lib/pickadate/lib/themes/classic.time.css'
+
+
 			],
 			js: [
 
                 // JQUERY
+                // TODO:  Moved this up here to make sure jQuery is loaded before pickadate - how can I make that dependency clearer and less chancy?
                 'public/lib/jquery/dist/jquery.js',
 
 				// Angular
@@ -62,8 +65,8 @@ module.exports = {
 				
 				// Date Picker (pickadate)
                 'public/lib/pickadate/lib/picker.js',
-                'public/lib/pickadate/lib/picker.date.js'
-                // 'public/lib/angular-pickadate/src/angular-pickadate.js'
+                'public/lib/pickadate/lib/picker.date.js',
+                'public/lib/pickadate/lib/picker.time.js'
 			]
 		}
 

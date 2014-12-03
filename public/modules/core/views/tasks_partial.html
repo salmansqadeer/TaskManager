@@ -1,13 +1,4 @@
 
-<!--<div pickadate ng-model="date"></div>-->
-
-<!--<input pickadate id='datePickerTest' ng-model="date" type='text' placeholder='this is a test'></form>-->
-
-<!--<input id='test' type="text" zapickadate="curDate"/>-->
-
-<input id="test" type="text" pick-a-date="curDate" />
-
-<!--<input type="text" pickatime="curDate" ng-model="date" />-->
 
 <!-- SIGNED IN HEADER -->
 <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
@@ -73,17 +64,16 @@
 	                                </td>
 
 	                                <td class='col-md-1'>
-	                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
+	                                    <input type="date" pick-a-date="curDate" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
 	                                </td>
 
 	                                <td class='col-md-1'>
-	                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
+	                                    <input type="date" pick-a-date="curDate" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
 	                                </td>
 
 									<td class='col-md-1'>
 										<input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())">
 									</td>
-
 
                             </div>
 
