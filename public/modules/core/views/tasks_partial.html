@@ -1,4 +1,5 @@
 
+
 <!-- SIGNED IN HEADER -->
 <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 
@@ -28,7 +29,6 @@
 
 </nav>
 
-
 <!-- TASK DETAILS -->
 <div class="tasks">
 
@@ -44,8 +44,8 @@
                     	</div>
 
 					</th>
-                    <th class='col-md-1' >Start Date</th>
-                    <th class='col-md-1' >Due Date</th>
+                    <th class='col-md-1' >Start</th>
+                    <th class='col-md-1' >Due</th>
                     <th class='col-md-1' ></th>
                 </tr>
             </thead>
@@ -64,17 +64,16 @@
 	                                </td>
 
 	                                <td class='col-md-1'>
-	                                    <input type="date" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
+	                                    <input type="date" pick-a-date="curDate" data-ng-model="startDate" id="startDate" class="form-control" placeholder="Start Date">
 	                                </td>
 
 	                                <td class='col-md-1'>
-	                                    <input type="date" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
+	                                    <input type="date" pick-a-date="curDate" data-ng-model="dueDate" id="dueDate" class="form-control" placeholder="End Date">
 	                                </td>
 
 									<td class='col-md-1'>
 										<input type="submit" class="btn btn-default" ng-click="createTask(getSelectedList())">
 									</td>
-
 
                             </div>
 
@@ -126,3 +125,4 @@
     </div>
 
 </div>
+
